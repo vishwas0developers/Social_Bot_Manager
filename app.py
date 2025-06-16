@@ -1,6 +1,6 @@
 import importlib.util
 import importlib
-from flask import Flask, render_template, request, jsonify, redirect, url_for, Blueprint, session
+from flask import Flask, render_template, request, jsonify, redirect, url_for, Blueprint, session, send_from_directory
 import os
 import shutil
 import json
@@ -11,55 +11,47 @@ import psutil
 import time
 from datetime import datetime
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.utils import secure_filename
-from backend.admin_routes import admin_bp
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("FLASK_SECRET_KEY", "super_secret_fallback_key")  # Required for session management
-
-# Configuration for file uploads
-UPLOAD_FOLDER = 'uploads'
-ALLOWED_ZIP_EXTENSIONS = {'zip'}
-ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16 MB limit
-
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH
-app.register_blueprint(admin_bp)
+app.secret_key = "541cs65g6reghk;tlh3241d65fytxcn"  # Required for session management
 
 # Base paths
 BASE_PATH = r"C:\Apps\flask_bot_manager\python_scripts"
 BASE_DIR = "C:\\Apps\\flask_bot_manager"
 SCRIPT_DIR = os.path.join(BASE_DIR, "python_scripts")
 BACKUP_DIR = os.path.join(BASE_DIR, "python_scripts_backup")
-IMAGE_PATH = os.path.join(app.static_folder, "images")
+# IMAGE_PATH = os.path.join(app.static_folder, "images") # No longer needed for central app logos
 VENV_PATH = "venv"
 JSON_FILE = os.path.join(BASE_PATH, "buttons.json")
 TEMP_EXTRACT_PATH = os.path.join(BASE_PATH, "temp_extract")
 
 os.makedirs(BASE_PATH, exist_ok=True)
-os.makedirs(IMAGE_PATH, exist_ok=True)
+# os.makedirs(IMAGE_PATH, exist_ok=True) # No longer needed for central app logos
 
-@app.before_request
+# Step 1: Blueprint define karo
+manager_bp = Blueprint('manager_bp', __name__)
+
+@manager_bp.before_request
 def require_login():
-    if request.endpoint not in ('login', 'static') and 'user_logged_in' not in session:
-        return redirect(url_for('login'))
+    if not request.path.startswith("/login") and not request.path.startswith("/static/"):
+        if 'user_logged_in' not in session:
+            return redirect(url_for('manager_bp.login'))
 
-@app.route("/login", methods=["GET", "POST"])
+@manager_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
         if username == "admin" and password == "admin123":
             session['user_logged_in'] = True
-            return redirect(url_for("index"))
+            return redirect(url_for("manager_bp.index"))
         return render_template("login.html", error="Invalid credentials")
     return render_template("login.html")
 
-@app.route("/logout")
+@manager_bp.route("/logout")
 def logout():
     session.pop('user_logged_in', None)
-    return redirect(url_for('login'))
+    return redirect(url_for('manager_bp.login'))
 
 def create_backup(folder_name):
     """Creates a backup of the specified Python script folder with date and time."""
@@ -88,13 +80,6 @@ def save_buttons(data):
     with open(JSON_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
-def allowed_file(filename, allowed_extensions):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in allowed_extensions
-
-def allowed_image_file(filename):
-    return allowed_file(filename, ALLOWED_IMAGE_EXTENSIONS)
-
 def terminate_process_by_pid(pid):
     """Kill the running process using the stored PID."""
     try:
@@ -109,32 +94,43 @@ def terminate_process_by_pid(pid):
 def create_button(folder_name):
     buttons_data = load_buttons()
     info = buttons_data.get(folder_name, {})
-    return info.get("button_name", folder_name), folder_name, info.get("image", "/static/images/default.png")
+    # Use url_for for the default image to ensure correct path resolution
+    default_image_url = url_for('static', filename='images/default.png')
+    return info.get("button_name", folder_name), folder_name, info.get("image", default_image_url)
 
-@app.route("/")
+# New route to serve images dynamically from app folders
+@manager_bp.route('/app_logo/<app_name>/<image_filename>')
+def serve_app_logo(app_name, image_filename):
+    """Serves the logo image from the specific app's folder."""
+    app_dir = os.path.join(BASE_PATH, app_name)
+    try:
+        # Basic security check to prevent directory traversal
+        # Ensure the requested file path is truly a descendant of the app_dir
+        requested_path = os.path.realpath(os.path.join(app_dir, image_filename))
+        if not requested_path.startswith(os.path.realpath(app_dir) + os.sep):
+             print(f"Attempted directory traversal: {image_filename} in {app_name}")
+             return jsonify({"status": "error", "message": "Invalid file path."}), 400
+
+        return send_from_directory(app_dir, image_filename)
+    except FileNotFoundError:
+        print(f"Image file not found: {image_filename} in {app_dir}")
+        # Return 404 Not Found if the image does not exist
+        return jsonify({"status": "error", "message": "Image not found."}), 404
+    except Exception as e:
+        print(f"Error serving image {image_filename} from {app_dir}: {e}")
+        return jsonify({"status": "error", "message": f"Error serving image: {e}"}), 500
+
+@manager_bp.route("/")
 def index():
     buttons_data = load_buttons()
     buttons = [(info["button_name"], folder, info["image"]) for folder, info in buttons_data.items()]
     return render_template("index.html", buttons=buttons)
 
-@app.route("/upload", methods=["POST"])
+@manager_bp.route('/upload', methods=['POST'])
 def upload():
-    zip_file = request.files.get("zip_file")
+    zip_file = request.files["zip_file"]
     image_file = request.files.get("image")
     button_name = request.form.get("button_name", "").strip()
-
-    if not zip_file or not button_name:
-        return "Error: ZIP file and button name are required.", 400
-
-    if not allowed_file(zip_file.filename, ALLOWED_ZIP_EXTENSIONS):
-        return "Error: Only .zip files are allowed for bot apps.", 400
-
-    if image_file and not allowed_image_file(image_file.filename):
-        return "Error: Only .png, .jpg, .jpeg, .gif image files are allowed.", 400
-
-    # Secure filenames
-    zip_filename = secure_filename(zip_file.filename)
-    image_filename = secure_filename(image_file.filename) if image_file else None
 
     if zip_file and button_name:
         folder_name = "".join(c if c.isalnum() or c in "_-" else "_" for c in button_name).lower()
@@ -279,23 +275,52 @@ def upload():
             print("No requirements.txt found. Skipping dependency installation.")
         # --- End: Install requirements using venv.bat ---
 
-        # Update buttons.json
+        # Update buttons.json and save image to app folder
         buttons_data = load_buttons()
-        img_path = "/static/images/default.png" # Default image
+        # Default image path (using static for the default image)
+        default_image_url = url_for('static', filename='images/default.png')
+        img_path_for_json = default_image_url # Initialize with default
+        img_filename = None
+
         if image_file and image_file.filename: # Check if a file was actually uploaded
             try:
-                img_filename = f"{folder_name}.png" # Use folder name for consistency
-                image_save_path = os.path.join(IMAGE_PATH, img_filename)
-                image_file.save(image_save_path)
-                img_path = url_for('static', filename=f'images/{img_filename}') # Use url_for for safety
-                print(f"Saved image to: {image_save_path}")
-            except Exception as e:
-                print(f"⚠️ Warning: Could not save image file: {e}. Using default image.")
-                img_path = "/static/images/default.png"
+                # Determine image filename (use folder name for consistency, keeping original extension if desired, but .png is assumed here)
+                # A more robust solution might check the actual file extension
+                # Let's use the original filename to allow for different image types (jpg, png, etc.)
+                original_filename = image_file.filename
+                # Sanitize filename to prevent issues
+                img_filename = "".join(c if c.isalnum() or c in "_-" else "_" for c in original_filename)
+                # Ensure a non-empty filename
+                if not img_filename:
+                     img_filename = f"{folder_name}_uploaded_image"
 
-        buttons_data[folder_name] = {"button_name": button_name, "image": img_path}
+                image_save_path = os.path.join(script_dir, img_filename)
+
+                # Ensure the app's directory exists before saving the image (should exist from zip extraction)
+                os.makedirs(script_dir, exist_ok=True)
+
+                # Save the image file inside the app's directory
+                image_file.save(image_save_path)
+
+                # Generate the dynamic URL for the image using the new route
+                img_path_for_json = url_for('manager_bp.serve_app_logo', app_name=folder_name, image_filename=img_filename)
+                print(f"Saved image to: {image_save_path} and set path in json to {img_path_for_json}")
+
+            except Exception as e:
+                print(f"⚠️ Warning: Could not save image file to app folder during upload: {e}. Using default image.")
+                img_path_for_json = default_image_url # Fallback to default
+                img_filename = None # Indicate that custom image was not saved
+
+        # Update buttons_data with the button name and the determined image path
+        # If a new image was saved successfully, img_path_for_json holds the dynamic URL.
+        # If no new image was uploaded or saving failed, it holds the default_image_url.
+        buttons_data[folder_name] = {"button_name": button_name, "image": img_path_for_json}
+
         save_buttons(buttons_data)
         print(f"Updated buttons.json for '{folder_name}'.")
+
+
+        # --- Dynamically register the app ---
 
         # Dynamically register the app
         # IMPORTANT: As discussed, if the batch file installed new dependencies,
@@ -317,15 +342,128 @@ def upload():
         if not button_name:
              print("Upload failed: Button name was empty.")
         # Consider adding a Flask flash message here for the user
-        return redirect(url_for("index")) # Redirect back, maybe with an error message
+        return redirect(url_for("manager_bp.index")) # Redirect back, maybe with an error message
 
-    return redirect(url_for("index"))
+    return redirect(url_for("manager_bp.index"))
 
-@app.route("/delete/<folder_name>")
+@manager_bp.route("/delete/<folder_name>")
 def delete_script(folder_name):
     script_dir = os.path.join(BASE_PATH, folder_name)
-    image_path = os.path.join(IMAGE_PATH, f"{folder_name}.png")
     buttons_data = load_buttons()
+
+    # Attempt to get the image filename from buttons_data to delete it from the app folder
+    image_filename_to_delete = None
+    if folder_name in buttons_data and "image" in buttons_data[folder_name]:
+        image_url = buttons_data[folder_name]["image"]
+        # Extract filename from the dynamic URL if it exists
+        # The URL format is expected to be like /app_logo/<app_name>/<image_filename>
+        if '/app_logo/' in image_url:
+            try:
+                # Split the URL by / and get the last part as filename
+                url_parts = image_url.split('/')
+                if len(url_parts) > 0:
+                    image_filename_to_delete = url_parts[-1]
+                    # Basic check to ensure it doesn't look like a path traversal attempt
+                    if '..' in image_filename_to_delete or '/' in image_filename_to_delete or '\\' in image_filename_to_delete:
+                         image_filename_to_delete = None # Treat as invalid filename
+            except Exception as e:
+                print(f"Error extracting filename from URL {image_url}: {e}")
+                image_filename_to_delete = None
+
+    # Construct the potential image path within the app folder
+    image_path_in_app_folder = None
+    if image_filename_to_delete:
+         image_path_in_app_folder = os.path.join(script_dir, image_filename_to_delete)
+
+    if folder_name in buttons_data and "pid" in buttons_data[folder_name]:
+        pid = buttons_data[folder_name]["pid"]
+        terminate_process_by_pid(pid)
+        del buttons_data[folder_name]["pid"]
+
+    # Unregister blueprint and clean up sys.modules
+    if folder_name in app.blueprints:
+        app.blueprints.pop(folder_name, None)
+    mod_name = f"{folder_name}_app"
+    if mod_name in sys.modules:
+        del sys.modules[mod_name]
+
+    # Increase wait time to allow resources (like file handles) to be released
+    print(f"Waiting for resources to release for '{folder_name}'...")
+    time.sleep(2) # Increased from 0.5 seconds to 2 seconds
+
+    # Create backup before deletion
+    create_backup(folder_name)
+
+    try:
+        # Attempt to delete the script directory using shutil.rmtree first
+        if os.path.exists(script_dir):
+            print(f"Attempting to delete script directory with shutil.rmtree: {script_dir}")
+            shutil.rmtree(script_dir)
+            print(f"✅ Successfully deleted script directory with shutil.rmtree: {script_dir}")
+
+        # If shutil.rmtree succeeds, the image file is also deleted, so no need for separate deletion.
+        # Proceed to update buttons.json
+        if folder_name in buttons_data:
+            del buttons_data[folder_name]
+        save_buttons(buttons_data)
+
+        return jsonify({"status": "success", "message": f"Deleted '{folder_name}'"})
+
+    except PermissionError as e:
+        # If shutil.rmtree fails due to PermissionError (file in use), try forceful deletion via rmdir command
+        print(f"❌ Permission Error during shutil.rmtree deletion of '{folder_name}': {e}")
+        print(f"Attempting forceful deletion using rmdir /S /Q: {script_dir}")
+        try:
+            # Use rmdir /S /Q for forceful deletion on Windows
+            # /S: Deletes a directory tree (the specified directory and all its subdirectories and files).
+            # /Q: Specifies quiet mode. Does not ask for confirmation when deleting a directory tree.
+            result = subprocess.run(
+                ["rmdir", "/S", "/Q", script_dir], # Command and arguments as a list
+                check=False, # Do not raise CalledProcessError immediately, check stderr for specific message
+                capture_output=True, # Capture stdout and stderr
+                text=True, # Decode output as text
+                shell=True # Use shell=True for rmdir command (necessary for rmdir on some systems)
+            )
+            print(f"✅ Forceful deletion command attempted for '{folder_name}'. Return Code: {result.returncode}")
+            print("--- rmdir Output Start ---")
+            print(result.stdout)
+            print(result.stderr)
+            print("--- rmdir Output End ---")
+
+            # Check if the error indicates a file is still in use (WinError 32)
+            # This message might be in stderr even with a 0 or non-zero return code depending on exact scenario
+            if "The process cannot access the file because it is being used by another process" in result.stderr or result.returncode != 0:
+                 print(f"❌ Forceful deletion failed or encountered errors for '{folder_name}'. Stderr indicates a problem.")
+                 # Provide a simplified error message instructing the user to restart
+                 return jsonify({"status": "error", "message": f"Could not delete app directory '{folder_name}': A file is in use. Please restart the Flask Bot Manager application to release file locks and try again."}), 500
+
+
+            # If rmdir command executed without the specific file-in-use error and returned 0, assume success
+            if not os.path.exists(script_dir):
+                 print(f"✅ Confirmed directory '{script_dir}' is deleted after forceful attempt.")
+
+                 # Forceful deletion worked, now update buttons.json
+                 if folder_name in buttons_data:
+                    del buttons_data[folder_name]
+                 save_buttons(buttons_data)
+                 return jsonify({"status": "success", "message": f"Deleted '{folder_name}'. (Note: Forceful deletion was required.)"})
+            else:
+                 # If directory still exists despite successful rmdir execution (unlikely but possible)
+                 print(f"⚠️ rmdir /S /Q command executed successfully but directory '{script_dir}' still exists.")
+                 return jsonify({"status": "error", "message": f"Failed to delete app directory '{folder_name}' even with forceful attempt. Directory still exists."}), 500
+
+        except FileNotFoundError:
+             print(f"❌ Error: rmdir command not found.") # Should not happen on Windows
+             return jsonify({"status": "error", "message": f"Could not execute deletion command for '{folder_name}'. rmdir command not found."}), 500
+        except Exception as e:
+             # Catch any other unexpected exceptions during the forceful deletion attempt
+             print(f"❌ An unexpected error occurred during forceful deletion of '{folder_name}': {e}")
+             return jsonify({"status": "error", "message": f"An unexpected error occurred during forceful deletion: {str(e)}. Please restart the Flask Bot Manager application and try again."}), 500
+
+    except Exception as e:
+        # Catch any other exceptions during the initial shutil.rmtree attempt
+        print(f"❌ An unexpected error occurred during deletion of '{folder_name}': {e}")
+        return jsonify({"status": "error", "message": f"An unexpected error occurred during deletion: {str(e)}"}), 500
 
     if folder_name in buttons_data and "pid" in buttons_data[folder_name]:
         pid = buttons_data[folder_name]["pid"]
@@ -357,17 +495,11 @@ def delete_script(folder_name):
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
-@app.route("/edit/<folder_name>", methods=["POST"])
+@manager_bp.route("/edit/<folder_name>", methods=["POST"])
 def edit_script(folder_name):
     new_button_name = request.form.get("button_name", "").strip()
     new_zip_file = request.files.get("zip_file")
     new_image_file = request.files.get("image")
-
-    if new_zip_file and not allowed_file(new_zip_file.filename, ALLOWED_ZIP_EXTENSIONS):
-        return jsonify({"status": "error", "message": "Only .zip files are allowed for bot apps."}), 400
-
-    if new_image_file and not allowed_image_file(new_image_file.filename):
-        return jsonify({"status": "error", "message": "Only .png, .jpg, .jpeg, .gif image files are allowed."}), 400
 
     original_script_dir = os.path.join(BASE_PATH, folder_name) # Keep original path for checks/backup
     buttons_data = load_buttons()
@@ -506,28 +638,65 @@ def edit_script(folder_name):
     # Update image if a new one was uploaded
     if new_image_file and new_image_file.filename:
         try:
-            img_filename = f"{folder_name}.png"
-            image_save_path = os.path.join(IMAGE_PATH, img_filename)
-            # Remove old image first? Optional.
-            if os.path.exists(image_save_path):
-                os.remove(image_save_path)
-            new_image_file.save(image_save_path)
-            buttons_data[folder_name]["image"] = url_for('static', filename=f'images/{img_filename}')
-            print(f"Updated image for '{folder_name}'.")
-        except Exception as e:
-            print(f"⚠️ Warning: Could not save new image file during edit: {e}.")
-            # Keep existing image path if save fails
+            # Determine image filename (using original filename for type, but sanitizing)
+            original_filename = new_image_file.filename
+            img_filename = "".join(c if c.isalnum() or c in "_-" else "_" for c in original_filename)
+            if not img_filename:
+                 img_filename = f"{folder_name}_edited_image"
 
-    # Update button name if a new one was provided
+            image_save_path = os.path.join(script_dir, img_filename)
+
+            # Remove old image in the app folder if it exists and is different from the new one
+            # This part is tricky. We only want to remove the *old* custom image if a *new* custom image is provided.
+            # If the user is just editing the button name, we keep the existing image.
+            # If the user uploads a new image, we replace the old one.
+
+            # Get the current image path from buttons_data
+            current_image_url = buttons_data[folder_name].get("image")
+            old_image_filename = None
+            if current_image_url and '/app_logo/' in current_image_url:
+                 try:
+                    url_parts = current_image_url.split('/')
+                    if len(url_parts) > 0:
+                         old_image_filename = url_parts[-1]
+                         if '..' in old_image_filename or '/' in old_image_filename or '\\' in old_image_filename:
+                              old_image_filename = None # Invalid filename
+                 except Exception as e:
+                    print(f"Error extracting old filename from URL {current_image_url}: {e}")
+                    old_image_filename = None
+
+            # If a new image was uploaded AND its filename is different from the old one,
+            # OR if there was an old image and the new upload filename is the same (implying replacement),
+            # AND the old image was a custom one (not the default static),
+            # then remove the old image file from the app's directory.
+            if old_image_filename and old_image_filename != img_filename and os.path.exists(os.path.join(script_dir, old_image_filename)):
+                 try:
+                    os.remove(os.path.join(script_dir, old_image_filename))
+                    print(f"Removed old image file: {os.path.join(script_dir, old_image_filename)}")
+                 except Exception as e:
+                    print(f"⚠️ Warning: Could not remove old image file during edit: {e}.")
+
+            new_image_file.save(image_save_path)
+            # Update the image path in buttons.json to the new dynamic URL
+            buttons_data[folder_name]["image"] = url_for('manager_bp.serve_app_logo', app_name=folder_name, image_filename=img_filename)
+            print(f"Updated image for '{folder_name}' to {buttons_data[folder_name]['image']}.")
+
+        except Exception as e:
+            print(f"⚠️ Warning: Could not save new image file to app folder during edit: {e}.")
+            # If saving fails, keep the existing image path in buttons.json if one exists,
+            # otherwise it will fall back to the default later if not set.
+
+    # Update button name if a new one was provided (this happens regardless of image upload)
     if new_button_name:
         buttons_data[folder_name]["button_name"] = new_button_name
         print(f"Updated button name for '{folder_name}' to '{new_button_name}'.")
 
-    # Ensure essential keys exist even if only image/name was updated
+    # Ensure essential keys exist after potential updates
     if "button_name" not in buttons_data[folder_name]:
          buttons_data[folder_name]["button_name"] = folder_name # Default if missing
+    # If 'image' key is missing after potential update/failure, set to default static image
     if "image" not in buttons_data[folder_name]:
-         buttons_data[folder_name]["image"] = "/static/images/default.png" # Default if missing
+         buttons_data[folder_name]["image"] = url_for('static', filename='images/default.png')
 
     save_buttons(buttons_data) # Save all accumulated changes
 
@@ -624,5 +793,6 @@ def register_all_apps():
     app.wsgi_app = DispatcherMiddleware(app.wsgi_app, mapping)
 
 if __name__ == "__main__":
+    app.register_blueprint(manager_bp, url_prefix="/")
     register_all_apps()
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)

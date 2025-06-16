@@ -12,8 +12,10 @@ import time
 from datetime import datetime
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
+manager_bp = Blueprint("manager_bp", __name__)
+
 app = Flask(__name__)
-app.secret_key = "your_secret_key_here"  # Required for session management
+app.secret_key = "541cs65g6reghk;tlh3241d65fytxcn"  # Required for session management
 
 # Base paths
 BASE_PATH = r"C:\Apps\flask_bot_manager\python_scripts"
@@ -31,23 +33,23 @@ os.makedirs(IMAGE_PATH, exist_ok=True)
 @app.before_request
 def require_login():
     if request.endpoint not in ('login', 'static') and 'user_logged_in' not in session:
-        return redirect(url_for('login'))
+        return redirect(url_for('manager_bp.login'))
 
-@app.route("/login", methods=["GET", "POST"])
+@manager_bp.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
         if username == "admin" and password == "admin123":
             session['user_logged_in'] = True
-            return redirect(url_for("index"))
+            return redirect(url_for("manager_bp.index"))
         return render_template("login.html", error="Invalid credentials")
     return render_template("login.html")
 
-@app.route("/logout")
+@manager_bp.route("/logout")
 def logout():
     session.pop('user_logged_in', None)
-    return redirect(url_for('login'))
+    return redirect(url_for('manager_bp.login'))
 
 def create_backup(folder_name):
     """Creates a backup of the specified Python script folder with date and time."""
@@ -92,13 +94,13 @@ def create_button(folder_name):
     info = buttons_data.get(folder_name, {})
     return info.get("button_name", folder_name), folder_name, info.get("image", "/static/images/default.png")
 
-@app.route("/")
+@manager_bp.route("/")
 def index():
     buttons_data = load_buttons()
     buttons = [(info["button_name"], folder, info["image"]) for folder, info in buttons_data.items()]
     return render_template("index.html", buttons=buttons)
 
-@app.route("/upload", methods=["POST"])
+@manager_bp.route("/upload", methods=["POST"])
 def upload():
     zip_file = request.files["zip_file"]
     image_file = request.files.get("image")
@@ -285,11 +287,11 @@ def upload():
         if not button_name:
              print("Upload failed: Button name was empty.")
         # Consider adding a Flask flash message here for the user
-        return redirect(url_for("index")) # Redirect back, maybe with an error message
+        return redirect(url_for("manager_bp.index")) # Redirect back, maybe with an error message
 
-    return redirect(url_for("index"))
+    return redirect(url_for("manager_bp.index"))
 
-@app.route("/delete/<folder_name>")
+@manager_bp.route("/delete/<folder_name>")
 def delete_script(folder_name):
     script_dir = os.path.join(BASE_PATH, folder_name)
     image_path = os.path.join(IMAGE_PATH, f"{folder_name}.png")
@@ -325,7 +327,7 @@ def delete_script(folder_name):
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
-@app.route("/edit/<folder_name>", methods=["POST"])
+@manager_bp.route("/edit/<folder_name>", methods=["POST"])
 def edit_script(folder_name):
     new_button_name = request.form.get("button_name", "").strip()
     new_zip_file = request.files.get("zip_file")
@@ -586,5 +588,6 @@ def register_all_apps():
     app.wsgi_app = DispatcherMiddleware(app.wsgi_app, mapping)
 
 if __name__ == "__main__":
+    app.register_blueprint(manager_bp, url_prefix="/")
     register_all_apps()
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)

@@ -4,42 +4,17 @@
 <head>
     <title>Bot Management Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v={{ cache_version }}">
 </head>
 
-<body>
-    <div class="discount-banner">
-        <p>Flash Sale! Get 20% off all plans for a limited time!</p>
-    </div>
-
-    <div style="position: absolute; top: 20px; right: 30px;">
-        <a href="/logout" style="
-            padding: 10px 20px;
-            background-color: #e74c3c;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: sans-serif;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        ">Logout</a>
+<body class="dashboard-page">
+    <div id="page-loader">
+        <div class="spinner"></div>
     </div>
     
-    <div style="position: absolute; top: 20px; right: 150px;">
-        <a href="/login" style="
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: sans-serif;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        ">Login</a>
-    </div>
-
     <div id="main-container">
+        <a href="/logout" class="logout-button">Logout</a>
+    
         <!-- Sidebar for Upload Form -->
         <div id="sidebar">
             <h2>Upload & Create Button</h2>
@@ -55,9 +30,9 @@
 
                 <button type="submit">Upload & Create Button</button>
                 <!-- Progress Bar Container -->
-                <div id="progress-container" style="display:none;">
+                <div id="progress-container">
                     <h3>Uploading and Extracting...</h3>
-                    <div id="progress-bar" style="width: 0%; background-color: #4CAF50; height: 20px;"></div>
+                    <div id="progress-bar"></div>
                     <p id="progress-text">0%</p>
                 </div>
             </form>
@@ -88,7 +63,7 @@
     <!-- Edit Modal -->
     <div id="editModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('editModal')">&times;</span>
+            <span class="close-btn" onclick="closeModal('editModal')">×</span>
             <h2>Edit Script</h2>
             <form id="edit-form" enctype="multipart/form-data">
                 <input type="hidden" id="editFolderName" />
@@ -107,9 +82,16 @@
         </div>
     </div>
 
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v={{ cache_version }}">
     <script src="{{ url_for('static', filename='js/app.js') }}?v={{ cache_version }}"></script>
+    <script>
+    window.addEventListener("load", function () {
+        const loader = document.getElementById("page-loader");
+        if (loader) {
+            loader.style.display = "none";
+        }
+    });
+    </script>
+
 </body>
 
 </html>

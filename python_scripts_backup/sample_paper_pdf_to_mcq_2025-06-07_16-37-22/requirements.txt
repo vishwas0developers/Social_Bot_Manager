@@ -1,4 +1,0 @@
-Flask
-pymupdf
-pandas
-openpyxl

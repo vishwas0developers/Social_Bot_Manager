@@ -1,8 +1,0 @@
-Flask
-google-generativeai
-python-dotenv
-PyMuPDF # PDF se Image conversion ke liye (fitz)
-Pillow # Image handling ke liye
-pandas # Excel file banane ke liye
-openpyxl # Pandas ko Excel (.xlsx) ke liye chahiye
-python-docx # DOCX file banane ke liye
