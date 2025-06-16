@@ -1,0 +1,121 @@
+<style>
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+.header {
+    width: 100%;
+    background-color: #e60000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px 5px;
+    font-size: 40px;
+}
+.subtitle {
+    width: 100%;
+    background-color: #e60000;
+    color: #ffeb3b;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.content {
+    background-color: white;
+    display: flex;
+    padding: 0;
+}
+.left-container {
+    width: 60%;
+    padding: 30px 20px;
+    text-align: center;}
+.left-container h2 {
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+}
+.left-container .highlight {
+    color: #e60000;
+    margin-bottom: 10px;
+}
+.left-container .post-count {
+    color: #e60000;
+    font-size: 60px;
+    margin-top: 30px;
+}
+.clip-path-container {
+    width: 40%;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    background-color: #7107b72e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
+.circle-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid #ccc;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-right: -50px;
+  	background: #fff;
+}
+.footer {
+    background: linear-gradient(to right, #b30000, #330000);
+    color: white;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+}
+.footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+.footer img {
+    height: 28px;
+    margin-left: 10px;
+}
+.top-banner {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}</style>
+
+<div class="container">
+<div class="top-banner">
+    <div class="header">
+        <h1 style="color: white; border-bottom: 3px solid;">ITI पास के लिए सरकारी भर्ती</h1>
+    </div>
+  
+    <div class="subtitle">
+        {{Headline}}
+    </div>
+</div>
+    <div class="content">
+        <div class="left-container">
+            <h2 class="highlight">{{Description}} <span style="color: black; line-height: 1.9;">{{Sub_Description}}</span></h2>
+            <h2 class="post-count">कुल पद - {{Post_Count}}</h2>
+        </div>
+        <div class="clip-path-container">
+            <div class="circle-image">
+				<img alt="Logo" src="{{Logo_URL}}" />
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>Last Date - {{Last_Date}}</div>
+        <div>
+            More Details Visit - <a href="https://www.iticareer.in">www.iticareer.in</a>
+            <img alt="ITI Career Logo" src="https://www.iticareer.in/favicon.ico" />
+        </div>
+    </div>
+</div>

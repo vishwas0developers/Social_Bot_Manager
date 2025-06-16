@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Auth Code - Scraper</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <style>
+        .header-buttons {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-bottom: 1px solid #dee2e6;
+            display: flex; /* Use flexbox for alignment */
+            justify-content: flex-start; /* Align home button to the start */
+            align-items: center; /* Vertically center items */
+        }
+         .flash-messages {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+         <!-- Header with Home Button -->
+         <div class="header-buttons">
+              <a href="{{ url_for('index_get') }}" class="btn btn-secondary">Back to Scraper</a>
+         </div>
+
+        <h2 class="text-center">Update Authentication Code</h2>
+
+        <!-- Flash Messages Area -->
+        <div class="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+        </div>
+
+        <p class="text-muted mt-3">
+            If scraping failed due to an authentication error (401), please obtain a new, valid API request URL from your browser's developer tools (Network tab) while interacting with the Testbook website. Paste the full URL below. The application will extract and save the necessary 'auth_code'.
+        </p>
+
+        <form method="post" action="{{ url_for('update_auth_code_post') }}" class="mt-4">
+            <div class="form-group">
+                <label for="api_url">Paste Full Testbook API URL:</label>
+                <textarea class="form-control" id="api_url" name="api_url" rows="5" placeholder="Paste the complete URL here, e.g., https://api.testbook.com/api/v2/tests/....&auth_code=eyJ...&..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Code</button>
+        </form>
+
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

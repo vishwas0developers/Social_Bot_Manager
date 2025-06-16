@@ -1,0 +1,2323 @@
+{
+    "header_footer_info": {
+        "page_1_header": "ALL INDIA TRADE TEST - 2025 FOR CRAFT\nINSTRUCTOR TRAINING SCHEME - ENTRANCE\nEXAMS\nTrade Name: Computer Hardware and Networking\nMaintenance\nYear: 1st Year",
+        "page_1_footer": null,
+        "page_2_header": null,
+        "page_2_footer": null,
+        "page_3_header": null,
+        "page_3_footer": "TRADE THEORY",
+        "page_4_header": null,
+        "page_4_footer": null,
+        "page_5_header": null,
+        "page_5_footer": "TRADE THEORY",
+        "page_6_header": null,
+        "page_6_footer": null,
+        "page_7_header": null,
+        "page_7_footer": null,
+        "page_8_header": null,
+        "page_8_footer": null,
+        "page_9_header": null,
+        "page_9_footer": null,
+        "page_10_header": null,
+        "page_10_footer": null,
+        "page_11_header": null,
+        "page_11_footer": null,
+        "page_12_header": "TRADE THEORY",
+        "page_12_footer": null,
+        "page_13_header": null,
+        "page_13_footer": null,
+        "page_14_header": null,
+        "page_14_footer": null,
+        "page_15_header": null,
+        "page_15_footer": null,
+        "page_16_header": "A4 : input or output\nइनपूट या आऊटपूट",
+        "page_16_footer": null,
+        "page_17_header": null,
+        "page_17_footer": null,
+        "page_18_header": null,
+        "page_18_footer": null,
+        "page_19_header": null,
+        "page_19_footer": null,
+        "page_20_header": null,
+        "page_20_footer": null,
+        "page_21_header": null,
+        "page_21_footer": null,
+        "page_22_header": null,
+        "page_22_footer": null,
+        "page_23_header": null,
+        "page_23_footer": null,
+        "page_24_header": null,
+        "page_24_footer": null,
+        "page_26_header": null,
+        "page_26_footer": null,
+        "page_27_header": null,
+        "page_27_footer": null,
+        "page_28_header": "Computer Hardware and Networking",
+        "page_28_footer": null
+    },
+    "page_1_MCQs": [
+        {
+            "question_number": "1",
+            "question_text": "The Process of opposition to the current flow is........\nधारा प्रवाह को विरोध कि प्रक्रिया क्या है।",
+            "options": [
+                "A1: Inductance\nइनडक्टैनस",
+                "A2: Admittance\nऐडमिटेंन्स",
+                "A3: Capacitance\nकैपेसिटान्स",
+                "A4: Resistance\nरसिस्टान्स"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 1
+        },
+        {
+            "question_number": "2",
+            "question_text": "Which device is used to protect an electric circuit?\nविद्युत परिपथ की सुरक्षा के लिए किस उपकरण का उपयोग किया जाता है।",
+            "options": [
+                "A1: Switch\nस्विच",
+                "A2: Fuse\nफ्यूज",
+                "A3: Energy meter\nऊर्जा मिटर",
+                "A4: Relay\nरिले"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 1
+        },
+        {
+            "question_number": "3",
+            "question_text": "What will be the frequency of DC current?\nDC की आवृति का क्या मान होता हे।",
+            "options": [
+                "A1: 50Hz\n50Hz",
+                "A2:0 Hz\n0 Hz",
+                "A3: Twice of the supply frequency\nविघूत धारा आवृत्ति का दो गुना"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 1
+        }
+    ],
+    "page_2_MCQs": [
+        {
+            "question_number": "4",
+            "question_text": "Moving Iron type instrument is used to measure.....\nमूंविग आयरन उपकरण क्या मापने के लिए प्रयोग किया जाता है।",
+            "options": [
+                "A1: AC only\nकेवल AC",
+                "A2: DC only\nDC only",
+                "A3: AC & DC\nAC और DC",
+                "A4: Nil\nशून्य"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 2
+        },
+        {
+            "question_number": "5",
+            "question_text": "What is the effective resistance is two 1 kW resistors are connected parallel?\nप्रभावी प्रतिरोध दो एक के 1 kW प्रतिरोध को समानांतर में जोडा जाता है।",
+            "options": [
+                "Α1 : 2 ΚΩ\n2 ΚΩ",
+                "Α2: 500 Ω\n500 Ω",
+                "Α3 : 250 Ω\n250 Ω",
+                "Α4 : 1 ΚΩ\n1 ΚΩ"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 2
+        },
+        {
+            "question_number": "6",
+            "question_text": "What is the formula to find out power in an electrical circuit?\nविद्युत परिपथ में शिक्त ज्ञात करने का सूत्र क्या है।",
+            "options": [
+                "A1:P=IxR\nP=IxR",
+                "A2: P = I2 x R\nP = 12 x R",
+                "A3: P=VxR\nP=VxR",
+                "A4: P = V/R\nP = V/R"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 2
+        },
+        {
+            "question_number": "7",
+            "question_text": "What is the formula, if two resistors, R1 & R2 connected in parallel?\nयदि दो प्रतिरोध आर एक और आर दो कसे समावांतरे का जोड हो तो प्रतिरोध निकालने का सुत्र क्या है।",
+            "options": [
+                "A1: R = R1 & R2\nR = R1 & R2",
+                "A2: R = R1 x R2\nR = R1 x R2"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 2
+        }
+    ],
+    "page_3_MCQs": [
+        {
+            "question_number": "8",
+            "question_text": "Advantage of surface Mount device is.....\nस्रफेस माउड उपकरण के क्या लाभ है।",
+            "options": [
+                "A1: Connecting leads available\nकनेक्टिंग लीड उपलब्ध",
+                "A2: Small\nछोटा",
+                "A3: Costly\nमहँगा",
+                "A4: Through hole facility available\nउपलब्ध होल सुविधा के माध्यम से"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 3
+        },
+        {
+            "question_number": "9",
+            "question_text": "Algebraic sum of incoming and outgoing current is zero. Identify the law.\nआने और जाने वाली विद्युत धारा का बिजगणित राशि शुन्य है।",
+            "options": [
+                "A1: Ohms law\nओम्ह नियम",
+                "A2: Kirchoffs First law\nकिरशौक का पहला नियम",
+                "A3: Kirchoffs second law\nकिरशौक का द्वितीय नियम",
+                "A4: Nortons theorem\nनौर्टन का सिद्धान्त"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 3
+        },
+        {
+            "question_number": "10",
+            "question_text": "The following symbol represents which components?\nनिम्नलिखित प्रतीक किन घटकों का प्रतिनिधित्व करता है।",
+            "options": [
+                "A1: LDR\nLDR",
+                "A2: VDR\nVDR",
+                "A3: NTC\nNTC",
+                "A4: PTC\nPTC"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 3
+        }
+    ],
+    "page_4_MCQs": [
+        {
+            "question_number": "11",
+            "question_text": "What is the colour code for 1.2 K ±5% resistor?\n1.2 K ±5% प्रतिरोध का कलर कोड है।",
+            "options": [
+                "Brown black red gold\nभुरा काला लाल सुनहरा",
+                "Brown black red silver\nभुरा काला लाल सिलवर",
+                "Brown red red gold\nभुरा लाल लाल सुनेहरा",
+                "Brown orange red silver\nभुरा नारंगी लाल सिलवर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 4
+        },
+        {
+            "question_number": "12",
+            "question_text": "What is the function of soldering?\nसोल्डरीग का क्या कार्य होता?",
+            "options": [
+                "To make bond between two metal pieces\nदो धातुओ के टूकडों को जोडना",
+                "To make bond between two wooden pieces\nलकडी के टूकडो को जोडना",
+                "To make bond between any type of materials\nकिसी भी सामग्री के बीच जोड़ बनाना",
+                "To remove the joints\nजोडो को खोलने के लिए"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 4
+        },
+        {
+            "question_number": "13",
+            "question_text": "What is the unit of inductive reactance?\nइनंडक्टिव रिएक्टेस कि क्या ईकाई है?",
+            "options": [
+                "Henry\nहेनरी",
+                "Hertz\nहडस",
+                "Ohm\nओहम",
+                "Farad\nफ्ररोड"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 4
+        },
+        {
+            "question_number": "14",
+            "question_text": "What is the formula to find out inductance of a coil?\nइनक्टेस ऑफ फॉइल का पता लगाने का सूत्र क्या है?",
+            "options": [
+                "L =\n\nl",
+                "L =\n\nA"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 4
+        }
+    ],
+    "page_5_MCQs": [
+        {
+            "question_number": "15",
+            "question_text": "The induction is used to.....\nप्ररेक का उपयोग कहाँ किया जाता है?",
+            "options": [
+                "A1: store electric energy\nबिजली को स्टौर करना",
+                "A2: store magnetic energy\nमैगनेटिक ऊर्जा को स्टोर करना",
+                "A3: pass AC\nAC पास",
+                "A4: block DC\nDC ब्लॉक"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 5
+        },
+        {
+            "question_number": "16",
+            "question_text": "Working principle of transformer is.....\nट्रॉसफार्मर का कार्य सिद्धांत क्या है?",
+            "options": [
+                "A1: Self inductance\nस्वंयम प्रेरक्टू",
+                "A2: Mutual inductance\nआपसी प्ररेकत्व",
+                "A3: Back emf\nemf बैक",
+                "A4: Eddy current\nएड्डी धारा"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 5
+        },
+        {
+            "question_number": "17",
+            "question_text": "How to find out the voltage ratio of a transformer?\nट्रॉसफार्मर के वोल्टेज अनुपात का पता कैसे लगएँ?",
+            "options": [
+                "A1: Vp/Vs\nVp/Vs",
+                "A2: Vs/Vp\nVs/Vp",
+                "A3: \nVp + Vs / Vs",
+                "A4: Vs / Vp+Vs"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 5
+        }
+    ],
+    "page_6_MCQs": [
+        {
+            "question_number": "18",
+            "question_text": "How to occur copper loss in a transformer?\nएक ट्रासफार्मर में ताबे के नुकसान को कैसे कम करे।",
+            "options": [
+                "A1: Due to the core of transformer\nकोर ट्रासफार्मर के कारण",
+                "A2: Due to the lamination of transformer\nट्रासफार्मर लेमिनेशन के कारण",
+                "A3: Due to the insulations provided in the transformer\nट्रासफार्मर की इसुलेशन के कारण",
+                "A4: Due to the copper winding of transformer\nट्रॉसफार्मर के वोल्टेज अनुपात का पता कैसे लगएँ"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 6
+        },
+        {
+            "question_number": "19",
+            "question_text": "In capacitance, capacitance value....\nघारिता में घारितर का मान है.......।",
+            "options": [
+                "A1: Directly proportional to area of plate\nप्लेट के क्षेत्रफल से सीधे अनपातिक",
+                "A2: Directly proportional to distance b/w the plates\nप्लेट की दूरी b/w से सीधे आनुपातिक क्षेत्र",
+                "A3: inversely proportional to area of plate\nप्लेट के क्षेत्रफल विपरित आनुपातिक",
+                "A4: inversely proportional to dielectric constant\nएक ट्रासफार्मर में ताबे के नुकसान को कैसे कम करे ।"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 6
+        },
+        {
+            "question_number": "20",
+            "question_text": "What is the relation b/w frequency and capacitive reactance in a circuit?\nपरिपथ में b/w आवृति और घारिता प्रतिक्रिया क्या है?",
+            "options": [
+                "A1: Not depending\nविर्भर नहीं रहती",
+                "A2: Frequency increases capacitive reactance increases\nआवृति और धारिता प्रतिक्रिया बढ़ जाती है",
+                "A3: Frequency increases capacitive reactance decreases\nआवृति बढ़ जाती है और घारिता बढ़ जाती है",
+                "A4: It will depends on circuit\nघारिता में घारितर का मान है.......।"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 6
+        },
+        {
+            "question_number": "21",
+            "question_text": "Compare the effect of capacitors for AC and DC frequency.....\nAC और DC आवृति के लिए घारिता में प्रभाव की तुलना करें।",
+            "options": [
+                "A1: allows AC blocks DC\nAC ब्लॉक DC की अनुमति देता है",
+                "A2: Allows DC block AC\nDC को अनुमति और AC को रोकना",
+                "A3: Not allowing both AC and DC\nAC और DC को प्रवाहित नहीं करता",
+                "A4: Fully allowing both AC and DC\nएसी और डीसी दोनों को पूरी तरह से अनुमति"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 6
+        }
+    ],
+    "page_7_MCQs": [
+        {
+            "question_number": "22",
+            "question_text": "What is the condition at which resonance occurs is...........\nवह स्थिति क्या है जिस पर रिसोनेन्स होता है।",
+            "options": [
+                "A1: XL > XC\nXL > XC",
+                "A2: XL <XC\nXL <XC",
+                "A3: XL = XC\nXL = XC",
+                "A4: XL & XC = 0\nXL & XC = 0"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 7
+        },
+        {
+            "question_number": "23",
+            "question_text": "Calculate the effective capacitances, if two 100 mf capacitors connected in parallel.\nप्रभावी समाई कि गणना करेए यदि दो 100 mf घारिता समानांतर में जुडे हुए है।",
+            "options": [
+                "Α1 : 50 μF\n50 μF",
+                "Α2 : 100 μF\n100 μF",
+                "Α3 : 133 μF\n133 μF",
+                "Α4 : 200 μF\n200 μF"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 7
+        },
+        {
+            "question_number": "24",
+            "question_text": "State advantage of bridge rectifier over centre tapped rectifier.....\nसेंटर टेसड रेक्टिफायर के ऊपर ब्रिज रेक्टिफायर का क्या लाभ है।",
+            "options": [
+                "A1: High output voltage\nउच्च आऊट पूट वोल्टेज",
+                "A2: Avoiding centre tap transformer\nसेन्टर टैप ट्रासफार्मर से बचाना",
+                "A3: High efficiency\nउच्च दक्षता",
+                "A4: Low ripple factor\nकम तंरग कारक"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 7
+        },
+        {
+            "question_number": "25",
+            "question_text": "What is the value of ripple factor in a bridge rectifier?\nब्रिज रंक्टिफायर में रिपल फैक्टर का मान होता है।",
+            "options": [
+                "A1: 0.48\n0.48",
+                "A2: 81.2\n81.2",
+                "A3: 40.6\n40.6"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 7
+        }
+    ],
+    "page_8_MCQs": [
+        {
+            "question_number": "26",
+            "question_text": "What is the purpose of the following component given in figure?\nचित्र में दिए गए निम्न घटक का उदेश्य क्या है।",
+            "options": [
+                "A1: Amplifier\nएम्पलीफायर",
+                "A2: Rectification\nरेक्टीफीकेशन",
+                "A3: Oscillation\nऑसिलेशन",
+                "A4: Voltage regulation\nवोल्टेज रेग्युलेशन"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 8
+        },
+        {
+            "question_number": "27",
+            "question_text": "What are the terminals of a transistor ?\nएक ट्राजिस्टर के टर्मिनल क्या है।",
+            "options": [
+                "A1: MT1, MT2, G\nMT1, MT2, G",
+                "A2: S, D, G\nS, D, G",
+                "A3: E, B, C\nE, B, C",
+                "A4: A, K, G\nA, K, G"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 8
+        },
+        {
+            "question_number": "28",
+            "question_text": "What is the function of IC 7912?\nIC 7912 का कार्य क्या है?",
+            "options": [
+                "A1: To give output of + 12V\n+ 12V का आउटपुट देना",
+                "A2: To give output of -12 V\n- 12V का आउटपुट देना",
+                "A3: To give output of both +12V & -12 V\n+12V & -12 V दोनों ऑउटपुट देना",
+                "A4: To give output other than 12V\n12V के अलावा अन्य आउटपुट देना"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 8
+        },
+        {
+            "question_number": "29",
+            "question_text": "What is the value of alpha in amplifiers ?\nप्रवधक में अल्फा का मान क्या है?",
+            "options": [],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 8
+        }
+    ],
+    "page_9_MCQs": [
+        {
+            "question_number": "30",
+            "question_text": "Operation of emitter follower is same as which transistor configuration?\nउत्सर्जक के साथ का संचालन ट्रांजिस्टर कॉन्गिरेशन के समान है।",
+            "options": [
+                "Common collector\nकॉमन संग्राहक",
+                "Common emitter\nकॉमन उत्सर्जक",
+                "Common bare\nमाज कॉमन",
+                "No transistor configuration\nकोई ट्राजिस्टर कान्फिगरेशन नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 9
+        },
+        {
+            "question_number": "31",
+            "question_text": "ẞ' stands for...\nB का अर्थ है।",
+            "options": [
+                "current gain of transistor CE configuration\nट्रांजिस्टर CE कान्फ्युगरेशन का धारा लाभ",
+                "voltage gain of transistor CE configuration\nटंराजिस्टर CE का वोल्टैज लाभ",
+                "current gain of transistor CB configuration\nट्रांजिस्टर CB कान्फ्युगरेशन का धारा लाभ",
+                "Voltage gain of transistor CC configuration\nट्रांजिस्टर CC कान्फ्युगरेशन का वोल्टेज लाभ"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 9
+        },
+        {
+            "question_number": "32",
+            "question_text": "The function of half adder circuit is to......\nहाफ ऐडर सर्किट का क्या कार्य है।",
+            "options": [
+                "add two bit with carry at a time\nएक साथ दो बिट डाले जो एक समय चले",
+                "add three bit at a time\nतिन बिट एक साथ डाले",
+                "add or subtract two bit at a time\nएक समय में दो बिट को जोडने और घटना",
+                "add two bit at a time\nएक बार मे दो बिट जोडे"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 9
+        },
+        {
+            "question_number": "33",
+            "question_text": "Which circuit is used to convert DC to AC?\nDC को AC में बदलने के लिए किस परिपथ का उपयोग किया जाता है।",
+            "options": [],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 9
+        }
+    ],
+    "page_10_MCQs": [
+        {
+            "question_number": "34",
+            "question_text": "Advantage of UPS is to supply ....\nUPS सपलाई के लाभ",
+            "options": [
+                "A1: uninterrupted AC sinewave to load\nलोड करने के लिए निर्बाध AC साइनवेव",
+                "A2: Uninterrupted DC power to load\nलोड करने के लिए निर्बाध DC पावर",
+                "A3: Uninterrupted AC squarewave to load\nलोड करने के लिए निर्बाध AC स्कायर वेव",
+                "A4: both AC/DC delivering\nAC/DC के दोनों की आपूर्ति"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 10
+        },
+        {
+            "question_number": "35",
+            "question_text": "Function of relay is on the principle of ............\nरिले के काग्र सिद्धांत पर है।",
+            "options": [
+                "A1: Electro magnetism\nइलेक्ट्रो मैग्नेटिजम",
+                "A2: Magnetism\nमैग्नेटिजम",
+                "A3: Electrostatic\nइलेक्ट्रोस्टाटिक",
+                "A4: Mechanical\nमैकेनिकल"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 10
+        },
+        {
+            "question_number": "36",
+            "question_text": "Which gate will produce O/P 1 if only all outputs are?\nयदि सभी आऊटपूट है तो कौन सा गेट ओ पी का उत्पादन करेगा।",
+            "options": [
+                "A1: OR gate\nOR गेट",
+                "A2: AND gate\nAND गेट",
+                "A3: NOT gate\nNOT गेट",
+                "A4: NOR gate\nNOR गेट"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 10
+        }
+    ],
+    "page_11_MCQs": [
+        {
+            "question_number": "37",
+            "question_text": "Name one of the server operating system.\nसर्वर आपरेटिंग सिस्टम में से एक का नाम बताएँ",
+            "options": [
+                "A1: Windows 8\nविंडोज 8",
+                "A2: Windows 10\nविंडोज 10",
+                "A3: XP\nXP",
+                "A4: Linux\nलिनक्स"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 11
+        },
+        {
+            "question_number": "38",
+            "question_text": "Which of the following OS is not based on Linux?\nनिम्न में से कौन सा OS लिनक्स पर आधारित नहीं है?",
+            "options": [
+                "A1: Cent OS\nसेंट OS",
+                "A2: Ubunter\nउबंटर",
+                "A3: Red hat\nरेड हैट",
+                "A4: Professional XP\nप्रोफेशनलXP"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 11
+        },
+        {
+            "question_number": "39",
+            "question_text": "Which command in LINUX is used to reports the full path to the current directory?\nधारा निर्देशिका में पूर्ण पथ की रिपोर्ट करने के लिए LINUX में किस कमांड का उपयोग किया जाता है?",
+            "options": [
+                "A1: PWD\nPWD",
+                "A2: CD\nCD",
+                "A3: PD\nPD",
+                "A4: RD\nRD"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 11
+        },
+        {
+            "question_number": "40",
+            "question_text": "$Cal command is used to do in LINUX OS is....\nLINUX OS में करने के लिए $Cal कमांड का उपयोग किया जाता है?",
+            "options": [
+                "A1: display calculator\nडिसप्ले काल्यूकैटर",
+                "A2: display calendar\nडिसप्ले कैलेन्डर",
+                "A3: display C file\nडिसप्ले C फाइल",
+                "A4: display current used file list\nफाईल लिस्ट में प्रयुक्त"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 11
+        }
+    ],
+    "page_12_MCQs": [
+        {
+            "question_number": "41",
+            "question_text": "The function of echo-command in LINUX will be....\nLINUX में इको कमांड का कार्य होगा",
+            "options": [
+                "write its arguments to standard output\nमानक आउटपुट के तर्क",
+                "read its argument to standard output\nस्टेंडर्ड आउटपुट में तर्क को पढ़ने के लिए",
+                "hear its argument to standard output\nस्टेंडर्ड आउटपुट में तर्क को सुनने के लिए",
+                "copying the file\nफाइल को कॉपी करने के लिए"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 12
+        },
+        {
+            "question_number": "42",
+            "question_text": "In which method Linux system everything stored ?\nलिनक्स सिस्टम किस पद्धति में सब कुछ संग्रहीत करता है।",
+            "options": [
+                "Directory\nडायरेक्टरी",
+                "File\nफाइल",
+                "Executables\nएजीक्यूटिव्स",
+                "Script\nस्क्रिप्ट"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 12
+        },
+        {
+            "question_number": "43",
+            "question_text": "The function of daisy wheel printer is ......\nडेजी व्हील प्रिंटर का -------- कार्य है।",
+            "options": [
+                "Print graphics\nप्रिंट ग्राफिक्स",
+                "Print characters and symbols\nवर्ण और प्रतीक को प्रिंट करने",
+                "Print graphics, characters and symbols\nप्रिंट ग्राफिक्सए अक्षर और प्रतीक",
+                "Print is not possible\nप्रिंट संभव नही है"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 12
+        },
+        {
+            "question_number": "44",
+            "question_text": "Which output device of a computer will convert text and graphical documents in to written physical form?\nकंप्यूटर का कौन सा आधार डिवाइस टेक्स्ट और ग्राफिकल दस्तावेजों को लिखित और भौतिक रूप में बदल देगा।",
+            "options": [
+                "Monitor\nमॉनिटर",
+                "Printer\nप्रिंटर",
+                "Earphone\nईरफोन",
+                "Speaker\nस्पीकर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 12
+        }
+    ],
+    "page_13_MCQs": [
+        {
+            "question_number": "45",
+            "question_text": "Dot matrix printer is....\nडॉट मैकट्रक्स प्रिटंर है।",
+            "options": [
+                "A1: impact printer\nइम्पैक्ट प्रिन्टर",
+                "A2: non-impact printer\nनान-इम्पैक्ट प्रिन्टर",
+                "A3: laser printer\nलेसर प्रिंटर",
+                "A4: ink jet type\nइन्क जट प्रिंटर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 13
+        },
+        {
+            "question_number": "46",
+            "question_text": "In a dot matrix printer, each dot is produced by a tiny metal rod is called......\nडॉट मैकट्रक्स प्रिटंर में प्रत्येक डॉट को एक छोटी मैटल रॉड द्वारा निर्मित किया जाता है।",
+            "options": [
+                "A1: wire\nतार",
+                "A2: matrix\nमोट्रिक",
+                "A3: spray\nस्प्रे",
+                "A4: image\nइमेज"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 13
+        },
+        {
+            "question_number": "47",
+            "question_text": "How many pins used in a dot matrix printer to make characters?\nवर्ण बनाने क लिए डॉअ मौट्रिक्स प्रिटंर में कितने पिन का उपयोग किया जाता है?",
+            "options": [
+                "A1: 40\n40",
+                "A2: 58\n58",
+                "A3: 50\n50",
+                "A4: 48\n48"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 13
+        },
+        {
+            "question_number": "48",
+            "question_text": "How the speed of the printer is expressed?\nप्रिटंर की गति कैसे व्यक्त की जाती है?",
+            "options": [
+                "A1: ppm\nppm",
+                "A2: pps\npps",
+                "A3: pph\npph"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 13
+        }
+    ],
+    "page_14_MCQs": [
+        {
+            "question_number": "49",
+            "question_text": "Which is used to print in large size and complex drawings in computer aided design?\nकम्पयूटर एडेड डिजाइन में बडे आकार और जटिल चित्र को प्रिंट करने के लिए किसका उपयोग किया जाता है?",
+            "options": [
+                "A1: Dot matrix printer\nडाट मेट्रिक्स प्रिन्टर",
+                "A2: Plotter\nप्लोटर",
+                "A3: Inkjet printer\nइन्जेक्ट प्रिन्टर",
+                "A4: Laser printer\nलेसर प्रिन्टर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 14
+        },
+        {
+            "question_number": "50",
+            "question_text": "Identify the given fig.\nदिए गए चित्र को पहचाने",
+            "options": [
+                "A1: Print head mechanism of dot matrix printer\nडॉट मैट्रिक्स प्रिंटर का हैंड मैकेनिजम",
+                "A2: Printer head mechanism of laser printer\nलेजर प्रिंटर का प्रिंटर हैड मैकेनिजम",
+                "A3: Print head mechanism of ink jet printer\nइंक जैट प्रिंटर का प्रिंटर हैड मैकेनिजम",
+                "A4: Print head mechanism of daisy wheel printer\nडेजी व्हील प्रिंटर का प्रिंटर हैड मैकेनिजम"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 14
+        },
+        {
+            "question_number": "51",
+            "question_text": "Which printer is working in the principle of photo electric?\nफोटो इलैक्ट्रिक के सिद्धांत में कौन सा प्रिंटर काम करता है?",
+            "options": [
+                "A1: Daisy wheel\nडेजी व्हील",
+                "A2: Ink jet\nइंक जैट",
+                "A3: Dot matrix\nडॉट मैट्रिक्स",
+                "A4: Laser printer\nलेजर प्रिन्टर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 14
+        },
+        {
+            "question_number": "52",
+            "question_text": "Which part of a laser printer used to form the text and images on the paper?\nलेंजर प्रिंटर के किस भाग का उपयोग कागज पर टैक्स्ट और चित्र बनाने के लिए किया जाता है?",
+            "options": [],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 14
+        }
+    ],
+    "page_15_MCQs": [
+        {
+            "question_number": "53",
+            "question_text": "Which part has problem in a printer if the print is faded with bubbles?\nयदि प्रिंट फीका है तो प्रिंटर के किस हिस्से में समस्या है?",
+            "options": [
+                "A1: Toner cartridge\nटोनर काट्रिज्म",
+                "A2: Power supply\nपावर सप्लाई",
+                "A3: DC controller\nDC कट्रोलर",
+                "A4: Roller\nरोलर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 15
+        },
+        {
+            "question_number": "54",
+            "question_text": "Which device has the consolidated function of printer, copier, scanner and fax?\nप्रिटंरए कॉपियरए स्कैनर और फैक्स का समेकित कार्य किस उपकरण से होता है?",
+            "options": [
+                "A1: Multi function printer\nमल्टी फन्कशन प्रिंटर",
+                "A2: Plotter\nप्लेटर",
+                "A3: Image scanner\nइमाज स्कैनर",
+                "A4: Laser printer\nप्रिन्टर प्रिंटर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 15
+        },
+        {
+            "question_number": "55",
+            "question_text": "In computer system, scanner is connected in......\nकम्पयूटर सिस्टम में स्कैनर जुडा होता है?",
+            "options": [
+                "A1: input\nइनपूट",
+                "A2: output\nआऊटपूट",
+                "A3: inside\nइनसाईड"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 15
+        }
+    ],
+    "page_16_MCQs": [
+        {
+            "question_number": "56",
+            "question_text": "Which device is used to read and give output of printed bar code?\nप्रिंटिड बार कोड के आऊटपुट को पढने और देने के लिए किस उपकरण का उपयोग किया जाता है?",
+            "options": [
+                "A1: Bar code scanner\nबार कोड स्कैनर",
+                "A2: Scanner\nस्कैनर",
+                "A3: Image scanner\nइमेज स्कैनर",
+                "A4: Network scanner\nनेटवर्क स्कैनर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 16
+        },
+        {
+            "question_number": "57",
+            "question_text": "Working principle of barcode scanner is.....\nबार कोड़ स्कैनर का कार्य सिद्धांत क्या है?",
+            "options": [
+                "A1: electric\nइलेक्ट्रिक",
+                "A2: opto electric\nआप्टो इलैक्ट्रिक",
+                "A3: magnetic\nमेगनेटिक",
+                "A4: mechanical\nमकैनिकल"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 16
+        },
+        {
+            "question_number": "58",
+            "question_text": "What is meant by an exact copy of a document made by electronic scanning and transmitted as data by telecommunication link?\nइलैक्ट्रानिक स्कैनिगं द्वारा बनाए गए दस्तावेज की एक प्रतिलिपी और दूर संचार लिंक द्वारा डेटा के रूप में प्रषित करने का क्या अर्थ है।",
+            "options": [
+                "A1: Scanning\nस्कैनिग",
+                "A2: Copying\nकापिंग",
+                "A3: Faxing\nफैक्सिंग",
+                "A4: Printing\nप्रिटिंग"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 16
+        },
+        {
+            "question_number": "59",
+            "question_text": "Network scanner is used to scan....\nनैटवर्क स्कैनर का उपयोग स्कैन करने के लिए किया जाता हैघ्",
+            "options": [
+                "A1: Image\nइमेज",
+                "A2: barcode\nबारकोड",
+                "A3: IP\nIP"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 16
+        }
+    ],
+    "page_17_MCQs": [
+        {
+            "question_number": "60",
+            "question_text": "An optical machine readable representation of data relating to the object to which it is attached is called?\nएक ऑप्टिकल मशीन जिस आब्जेसट से जुडी होती है उससे संबंधित डेटा को कहते है।",
+            "options": [
+                "A1: copying\nकॉपिंग",
+                "A2: faxing\nफैक्सिंग",
+                "A3: network code\nनेटवर्क कोड",
+                "A4: barcode\nबार कोड"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 17
+        },
+        {
+            "question_number": "61",
+            "question_text": "What is meant by MFP?\nMFP का मतलब क्या है?",
+            "options": [
+                "A1: Multifunction Paper Feeder\nमल्टी पेपर फीडर",
+                "A2: Manually Feeding Paper\nमैन्युअली फीडर पैपर",
+                "A3: Multifunction Printer\nमल्टीफन्गक्शन प्रिन्टर",
+                "A4: Maximum fax Printing\nमाक्सिमम फैक्स प्रिंन्टिंग"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 17
+        },
+        {
+            "question_number": "62",
+            "question_text": "The printer which print 50 pages or more per minute is called?\n50 या उससे अधिक पेजिज को प्रति मिनट प्रिट करने वाले प्रिटर को क्या कहते है।",
+            "options": [
+                "A1: laser printer\nलेजर प्रिन्टर",
+                "A2: medium speed printer\nमिडियम स्पीड प्रिन्टर",
+                "A3: high speed printer\nहाई स्पीड प्रिन्टर",
+                "A4: very high speed printer\nवेरी हाई स्पीड प्रिन्टर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 17
+        },
+        {
+            "question_number": "63",
+            "question_text": "Which machine prints output from a computer a line at a time rather than character by character?\nकोन सा प्रिंटर कम्पयूटर में एक समय में एक लाईन प्रिंट करता है बजाय एक. एक वर्ण के?",
+            "options": [
+                "A1: network printer\nनेटवर्क प्रिंटर",
+                "A2: line printer\nलाईन प्रिंटर"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 17
+        }
+    ],
+    "page_18_MCQs": [
+        {
+            "question_number": "64",
+            "question_text": "How many layers does OSI reference model has?\nOSI मॉडल में कितनी लेयेर है",
+            "options": [
+                "A1:4\n4",
+                "A2:5\n5",
+                "A3:6\n6",
+                "A4:7\n7"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 18
+        },
+        {
+            "question_number": "65",
+            "question_text": "HTTP stands for.....\nHTTP का अर्थ है।",
+            "options": [
+                "A1: Highlevel Test Transfer Protocol\nHighlevel Test Transfer Protocol",
+                "A2: High Tension Text Protocol\nHigh Tension Text Protocol",
+                "A3: Hyper Text Transfer Protocol\nHyper Text Transfer Protocol",
+                "A4: Hyper Tension Text Protocol\nHyper Tension Text Protocol"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 18
+        },
+        {
+            "question_number": "66",
+            "question_text": "How many bit contains in IPV4 address?\nIPV4 एड्रेस मे कितनी बिट होते है।",
+            "options": [
+                "A1: 8 bit\n8 बिट",
+                "A2: 16 bit\n16 बिट",
+                "A3: 32 bit\n32 बिट",
+                "A4: 64 bit\n64 बिट"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 18
+        },
+        {
+            "question_number": "67",
+            "question_text": "Router operates in which layer of OSI reference model?\nराउटर OSI मॉडल की किस लेयर में संचालित होता है।",
+            "options": [
+                "A1: Layer 1 (physical layer)\nलेयर 1 भौतिक लेयर",
+                "A2: Layer 3 (network layer)\nलेयर 3 (नेटवर्क लेयर)"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "TRADE THEORY",
+            "original_page": 18
+        }
+    ],
+    "page_19_MCQs": [
+        {
+            "question_number": "68",
+            "question_text": "What is the content of each IP packet?\nप्रत्येक IP पैकेट के कॉनटेक्ट क्या है?",
+            "options": [
+                "A1: Only source address\nकेवल सोर्स एड्रेस",
+                "A2: Only destination address\nकेवल डैस्टीनेशन एड्रेस",
+                "A3: Both source & destination address\nसोर्स और डेस्टीनेशन एड्रेस",
+                "A4: Source or destination address\nसोर्स या डेस्टीनेशन"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 19
+        },
+        {
+            "question_number": "69",
+            "question_text": "Which of the following can be software?\nनिम्ननिलिखित में से कौन सा सॉफ्टवेयर हो सकता हैं?",
+            "options": [
+                "A1: Router\nराउटर",
+                "A2: Fire walls\nफायरवॉल",
+                "A3: Gateway\nगेट वे",
+                "A4: Modem\nमॉडम"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 19
+        },
+        {
+            "question_number": "70",
+            "question_text": "URL stands for.....\nURL का पूरा रूप क्या है?",
+            "options": [
+                "A1: Unique Reference Locator\nUnique Reference Locator",
+                "A2: Uniform Reference Label\nUniform Reference Label",
+                "A3: Uniform Resource Locator\nUniform Resource Locator",
+                "A4: Unique Resource Locator\nUnique Resource Locator"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 19
+        },
+        {
+            "question_number": "71",
+            "question_text": "Which type of website that helps computer user find information on the inter net is called?\nकिस प्रकार की व्रबसाइट में कम्पयूटर यूजर का इटरनेट पर जानकारी खोजने में मदद करती है?",
+            "options": [
+                "A1: HTTP\nHTTP"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 19
+        }
+    ],
+    "page_20_MCQs": [
+        {
+            "question_number": "72",
+            "question_text": "Identify which is not a search engine in a computer internet system?\nकंप्यूटर इंटरनेट सिस्टम में कौन सर्च इंजन नहीं है?",
+            "options": [
+                "A1 : yahoo\nyahoo",
+                "A2 : google\ngoogle",
+                "A3 : ask.com\nask.com",
+                "A4 : HTTP\nHTTP"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 20
+        },
+        {
+            "question_number": "73",
+            "question_text": "Physical or logical arrangement of network is called.......\nनेटवर्क की भौतिक या लॉजिक व्यवस्था को क्या कहते है?",
+            "options": [
+                "A1 : topology\nटोपोलॉजी",
+                "A2 : protocol\nप्रोटोकॉल",
+                "A3 : routing\nराउटिंग",
+                "A4 : networking\nनेटवर्किंग"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 20
+        },
+        {
+            "question_number": "74",
+            "question_text": "Which topology of network having a central controller or hub?\nनेटवर्क में कौन सी टोपोलॉजिक में एक केन्द्रिय नियंत्रक या हब है?",
+            "options": [
+                "A1 : Star\nस्टार",
+                "A2 : Mesh\nमेश",
+                "A3 : Ring\nरिंग",
+                "A4 : Bus\nबस"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 20
+        },
+        {
+            "question_number": "75",
+            "question_text": "Which type of data communication system is used within a campus?\nकैंपस के भीतर किस प्रकार की डेटा संचार प्रणाली का उपयोग किया जाता है?",
+            "options": [
+                "A1 : MAN\nMAN"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 20
+        }
+    ],
+    "page_21_MCQs": [
+        {
+            "question_number": "76",
+            "question_text": "What is the value of 21 +496+16=?\n21 + 496 + 16 का मान बताइये",
+            "options": [
+                "A1: 51\n51",
+                "A2: 52\n52",
+                "A3:53\n53",
+                "A4: 54\n54"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 21
+        },
+        {
+            "question_number": "77",
+            "question_text": "What is the value of 3232 +4848-4242 = ?\n3232 + 4848 - 4242 का मान बाताइऐ",
+            "options": [
+                "A1: 3535\n3535",
+                "A2: 3636\n3636",
+                "A3: 3737\n3737",
+                "A4: 3838\n3838"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 21
+        },
+        {
+            "question_number": "78",
+            "question_text": "What is the value of (26 x 22) + (27 x 9)?\n(26 x 22) + (27 x 9) का मान बताइये",
+            "options": [
+                "A1: 815\n815",
+                "A2:816\n816",
+                "A3: 817\n817",
+                "A4:818\n818"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 21
+        },
+        {
+            "question_number": "79",
+            "question_text": "What is the value of (344016) x (28613)?\n(344016)×(286 13) का मान बताइये",
+            "options": [
+                "A1: 4720\n4720"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 21
+        }
+    ],
+    "page_22_MCQs": [
+        {
+            "question_number": "80",
+            "question_text": "Doctor is related to patient in same way teacher is related to.....\nडॉक्टर सम्बन्धित है मरीज से उसी तरह शिक्षक सम्बन्धित है",
+            "options": [
+                "A1: Education\nपढाई",
+                "A2: Hospital\nअस्पताल",
+                "A3: Student\nविद्यार्थी",
+                "A4: School\nविघालय"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 22
+        },
+        {
+            "question_number": "81",
+            "question_text": "Tailor is related to pant in same way cobbler is related to.....\nटेलर सम्बन्धित है पेट से उसी तरह मोची सम्बन्धित है",
+            "options": [
+                "A1: Cloth\nकपडे",
+                "A2: Leather\nचमडा",
+                "A3: Shoes\nजूते",
+                "A4: Shop\nदुकान"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 22
+        },
+        {
+            "question_number": "82",
+            "question_text": "What is the value of (6650÷ 50) x (169÷ 13) = ?\n(6650÷ 50) x (169÷ 13) = का मान क्या है?",
+            "options": [
+                "A1: 1723\n1723",
+                "A2: 1725\n1725",
+                "A3: 1727\n1727",
+                "A4: 1729\n1729"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 22
+        },
+        {
+            "question_number": "83",
+            "question_text": "What is the least number to be added to 5328 to make it a perfect square?\n5328 मे कम से कम क्या जोडा जाए कि वह पूर्ण वर्ग बन जाए",
+            "options": [],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 22
+        }
+    ],
+    "page_23_MCQs": [
+        {
+            "question_number": "84",
+            "question_text": "What is the average weight of all the 6 boys, If the body weight of 6 boys recorded as 21Kg, 27Kg, 33Kg, 40Kg, 47Kg and 54Kg?\nअगर 6 लडकियो का वजन क्रमश; 21Kg, 27Kg, 33Kg, 40Kg, 47Kg, 54Kg और 68Kg है तो इनका औसत वजन क्या होगा",
+            "options": [
+                "A1: 36 Kg\n36 Kg",
+                "A2: 37 Kg\n37 Kg",
+                "A3: 38 Kg\n38 Kg",
+                "A4: 39 Kg\n39 Kg"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 23
+        },
+        {
+            "question_number": "85",
+            "question_text": "Mr.Ganesh purchased Fridge for Rs 32,000 and sold it to Rs 40,000 what is the profit percentage?\nश्री गणेश ने Fridge रु 32,000 में खरीदा कर रु 40,000 मे बेचा तो लाभ प्रतिशत बताइये",
+            "options": [
+                "A1: 10%\n10%",
+                "A2: 15%\n15%",
+                "A3: 20%\n20%",
+                "A4: 25%\n25%"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 23
+        },
+        {
+            "question_number": "86",
+            "question_text": "What would be the simple interest obtained an amount of Rs 6000 at the rate of 12% annum at the end of 2 years?\nरु 6000 का 12% वाषिक दर से 2 वर्ष का साधारण ब्याज बताइये",
+            "options": [
+                "A1: Rs 2160\nRs 2160",
+                "A2: Rs 2170\nRs 2170",
+                "A3: Rs 2180\nRs 2180",
+                "A4: Rs 2190\nRs 2190"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 23
+        },
+        {
+            "question_number": "87",
+            "question_text": "An almirah is sold at Rs 6204 after allowing a discount of 6%. Find its marked price?\nएक अल्मारी को 6% डिस्काउटं के बाद 6204 रू मे बेचा गया इसका चिन्हित मूल्य (MRP) बताइये",
+            "options": [],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 23
+        }
+    ],
+    "page_24_MCQs": [
+        {
+            "question_number": "88",
+            "question_text": "Ram deposited Rs. 9000 with a finance company for 2 years at an compound interest of 10% per annum. What is the amount that ram gets after 2 years?\nराम ने रु. 9000 एक फाइनासं कम्पनी के पास 2 वर्ष के 10% वार्षिक दर से जमा कराए 2 वर्ष पश्चात् चक्रवर्ती ब्याज बताइये",
+            "options": [
+                "A1: Rs 10,830\nRs 10,830",
+                "A2: Rs 10,850\nRs 10,850",
+                "A3: Rs 10,870\nRs 10,870",
+                "A4: Rs 10,890\nRs 10,890"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 24
+        },
+        {
+            "question_number": "89",
+            "question_text": "30 men can complete of a piece of work in 20 days. How many more men must be required to complete the work in 15 days?\n30 आदमी एक काम 20 दिन में कर सकते है। उसी काम को 15 दिन मे पूरा करने के लिए कितने आदमी और लगाने पडेगे",
+            "options": [
+                "A1:7\n7",
+                "A2:8\n8",
+                "A3:9\n9",
+                "A4:10\n10"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 24
+        },
+        {
+            "question_number": "90",
+            "question_text": "What distance does he travel everyday, If a person runs 9 km in 30 days?\nअगर एक व्यक्ति चार सप्ताह में 9 Km चलता है तो प्रतिदिन कितनी दूरी तय करता है",
+            "options": [
+                "A1: 300 m\n300 m",
+                "A2: 310 m\n310 m",
+                "A3: 320 m\n320 m",
+                "A4: 330 m\n330 m"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 24
+        },
+        {
+            "question_number": "91",
+            "question_text": "What is the value of 1971 + 91 x 15 ?\n1971 + 91 x 15 का मान क्या है?",
+            "options": [],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 24
+        }
+    ],
+    "page_26_MCQs": [
+        {
+            "question_number": "95",
+            "question_text": "What is the value of 91 + 416/8?\n91 + 416/8 का मान क्या है ?",
+            "options": [
+                "123\n123",
+                "133\n133",
+                "143\n143",
+                "153\n153"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 26
+        },
+        {
+            "question_number": "96",
+            "question_text": "Flower is related to Rose in the same way as vegetable is related to...\nफूल सम्बंधित है गुलाब से सब्जी सम्बंधित है",
+            "options": [
+                "Apple\nसेब",
+                "Carrot\nगाजर",
+                "Root\nजड़",
+                "Stem\nतना"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 26
+        },
+        {
+            "question_number": "97",
+            "question_text": "What is the cost of 8 Kg of Apples, If the cost of 4 Kg of apples are Rs 500?\n4 कि.ग्रा. सेब का मूल्य रु. 500 तो 8 कि.ग्रा. सेब का मूल्य बताइये",
+            "options": [
+                "Rs 700\nRs 700",
+                "Rs 800\nRs 800",
+                "Rs 900\nRs 900",
+                "Rs. 1000\nRs. 1000"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 26
+        },
+        {
+            "question_number": "98",
+            "question_text": "What is the total number of books in the book shop. If 35% books are in Tamil, 45% books are in English and the remaining 100 books are in other languages?\nकिसी दुकान मे 35% किताबें तमिल मे है, 45% किताबें अंग्रेजी मे है और शेष 100 किताबें दूसरी भाषाओं मे है तो कुल किताबों की संख्या बताइये?",
+            "options": [
+                "300\n300",
+                "400\n400",
+                "500\n500",
+                "600\n600"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 26
+        }
+    ],
+    "page_27_MCQs": [
+        {
+            "question_number": "99",
+            "question_text": "25% of a number is 500. What is 50% of that number?\nअगर किसी संख्या का 25% = 500 है तो उस संख्या का 50% क्या होगा?",
+            "options": [
+                "A1 : 850\n850",
+                "A2 : 900\n900",
+                "A3 : 950\n950",
+                "A4 : 1000\n1000"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 27
+        },
+        {
+            "question_number": "100",
+            "question_text": "What should come next in the alphabetical series A C F H K M P R U W?\nअंग्रेजी अक्षर सीरीज A C F H K M P R U W अगला अक्षर क्या होगा?",
+            "options": [
+                "A1 : 0\n0",
+                "A2 : Q\nQ",
+                "A3 : 5\n5",
+                "A4 : Z\nZ"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "",
+            "original_page": 27
+        }
+    ],
+    "page_28_MCQs": [
+        {
+            "question_number": "1",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "2",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "3",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "4",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "5",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "6",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "7",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "8",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "9",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "10",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "11",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "12",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "13",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "14",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "15",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "16",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "17",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "18",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "19",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "20",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "21",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "22",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "23",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "24",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "25",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "26",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "27",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "28",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "29",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "30",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "31",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "32",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "33",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "34",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "35",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "36",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "37",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "38",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "39",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "40",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "41",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "42",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "43",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "44",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "45",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "46",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "47",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "48",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "49",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "50",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "51",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "52",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "53",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "54",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "55",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "56",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "57",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "58",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "59",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "60",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "61",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "62",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "63",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "64",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "65",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "66",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "67",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "68",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "69",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "70",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "71",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "72",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "73",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "74",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "75",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "76",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "77",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "78",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "79",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "80",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "81",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "82",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "83",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "84",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "85",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "86",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "87",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "88",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "89",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "90",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "91",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "92",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "93",
+            "question_text": "A1",
+            "options": [],
+            "answer": "A1",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "94",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "95",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "96",
+            "question_text": "A2",
+            "options": [],
+            "answer": "A2",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "97",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "98",
+            "question_text": "A3",
+            "options": [],
+            "answer": "A3",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "99",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        },
+        {
+            "question_number": "100",
+            "question_text": "A4",
+            "options": [],
+            "answer": "A4",
+            "explanation": null,
+            "source_info": "",
+            "original_page": 28
+        }
+    ],
+    "processing_info": {
+        "chunk_warnings": [
+            "Chunk failed for pages 25-25"
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+CREATE TABLE discounts (
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(50) UNIQUE NOT NULL,
+    percentage NUMERIC(5, 2) NOT NULL,
+    active BOOLEAN DEFAULT TRUE,
+    start_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    end_date TIMESTAMP WITH TIME ZONE
+);
+
+INSERT INTO discounts (code, percentage, active, end_date) VALUES
+('FLASH20', 20.00, TRUE, '2025-12-31 23:59:59+00');

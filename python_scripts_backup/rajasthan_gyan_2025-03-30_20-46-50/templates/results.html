@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scraping Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Scraping Results</h1>
+        {% if success %}
+            <div class="alert alert-success">{{ success }}</div>
+        {% endif %}
+        {% for title, questions in results.items() %}
+            <div class="card my-3">
+                <div class="card-body">
+                    <h4 class="card-title">{{ title }}</h4>
+                    <p>Scraped {{ questions|length }} questions.</p>
+                    <a href="/download/{{ title }}.csv" class="btn btn-success">Download CSV</a>
+                    <a href="/download/{{ title }}.json" class="btn btn-warning">Download JSON</a>
+                </div>
+            </div>
+        {% endfor %}
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+</body>
+</html>

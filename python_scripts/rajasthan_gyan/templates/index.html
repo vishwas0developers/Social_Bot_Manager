@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Home Button -->
+    <a href="/" class="btn btn-secondary mb-3" style="margin: 20px;">Home</a>
+    <title>Rajasthan Gyan MCQ Scraper - Flask</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Rajasthan Gyan MCQ Scraper (Multiple URLs)</h2>
+        <form method="post" action="/rajasthan_gyan/" class="mt-4">
+            <div class="form-group">
+                <label>Enter Test URLs:</label>
+                <textarea class="form-control" name="urls" rows="6" placeholder="Enter one URL per line" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Start Scraping</button>
+        </form>
+    </div>
+</body>
+</html>

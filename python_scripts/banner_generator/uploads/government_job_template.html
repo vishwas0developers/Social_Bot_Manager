@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>ITI सरकारी भर्ती (Fixed Size)</title>
+    <style>
+        /* Basic Reset and Box Sizing */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Define Color Variables */
+        :root {
+            --primary-red: #e60000;
+            --dark-red: #b30000;
+            --darker-red: #330000;
+            --highlight-yellow: #ffeb3b;
+            --text-white: #fff;
+            --text-black: #000;
+            --border-grey: #ccc;
+            --bg-white: #fff;
+            --clip-path-bg: #7107b72e; /* Semi-transparent purple */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            /* Center the fixed-size container on the page */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            min-height: 100vh; /* Ensure body takes at least viewport height */
+            padding: 20px; /* Add some padding around the container */
+            background-color: #f0f0f0; /* Optional: background for the page */
+        }
+
+        .container {
+            width: 1100px; /* Fixed width */
+            /* height: 650px; */ /* Example fixed height - uncomment and adjust if needed */
+            /* If a fixed height is set, decide how to handle overflow: */
+            /* overflow: hidden; */ /* Content exceeding height will be cut off */
+            /* overflow: auto; */ /* Scrollbars appear within the container if content exceeds height */
+            /* If height is not fixed, it will adjust to content */
+
+            margin: 0; /* Remove auto margin as body centers it now */
+            /* Use flex column to stack elements vertically within the fixed container */
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-white); /* Ensures container has a background */
+        }
+
+        .header {
+            background-color: var(--primary-red);
+            text-align: center;
+            padding: 10px 0;
+            flex-shrink: 0; /* Prevent header from shrinking */
+        }
+
+        .header h1 {
+            color: var(--text-white);
+            font-size: 70px; /* Adjusted slightly for fixed layout */
+            border-bottom: 3px solid var(--text-white);
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: bold;
+            margin-bottom: 5px; /* Reduced margin */
+        }
+
+        .subtitle {
+            background-color: var(--primary-red);
+            text-align: center;
+            padding: 6px 10px;
+            color: var(--highlight-yellow);
+            font-size: 60px; /* Adjusted slightly for fixed layout */
+            font-weight: bold;
+            flex-shrink: 0; /* Prevent subtitle from shrinking */
+        }
+
+        .content {
+            background-color: var(--bg-white);
+            display: flex;
+            padding: 0;
+            /* Allow content area to grow if container height is not fixed, */
+            /* or take remaining space if height is fixed */
+            flex-grow: 1;
+            min-height: 0; /* Important for flex children in some scenarios */
+        }
+
+        .left-container {
+            width: 60%;
+            padding: 25px 20px; /* Adjusted padding */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+        }
+
+        .left-container h2 {
+            font-size: 35px; /* Adjusted */
+            margin-bottom: 10px; /* Adjusted */
+            font-weight: bold;
+        }
+
+        .left-container .description-text {
+             margin-bottom: 10px;
+        }
+
+        .left-container .description-text .highlight {
+             color: var(--primary-red);
+        }
+
+        .left-container .description-text .sub-description {
+            color: var(--text-black);
+            line-height: 1.6; /* Adjusted */
+            font-weight: normal;
+            display: block;
+            margin-top: 5px;
+            font-size: 0.9em; /* Relative to parent h2 */
+        }
+
+        .left-container .post-count {
+            color: var(--primary-red);
+            font-size: 50px; /* Adjusted */
+            margin-top: 20px; /* Adjusted */
+            font-weight: bold;
+        }
+
+        .clip-path-container {
+            width: 40%;
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+            background-color: var(--clip-path-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0;
+            /* min-height: 250px; Removed min-height, let flexbox handle it */
+        }
+
+        .circle-image {
+            width: 250px;  /* Slightly adjusted fixed width */
+            height: 250px; /* Slightly adjusted fixed height */
+            border-radius: 50%;
+            border: 6px solid var(--border-grey);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -50px; /* Keep original fixed negative margin */
+            background: var(--bg-white);
+            flex-shrink: 0;
+        }
+
+        .circle-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer {
+            background: linear-gradient(to right, var(--dark-red), var(--darker-red));
+            color: var(--text-white);
+            padding: 15px 20px; /* Adjusted padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0; /* Prevent footer from shrinking */
+        }
+
+        .footer div {
+             font-size: 18px; /* Adjusted */
+             font-weight: bold;
+        }
+
+        .footer a {
+            color: var(--highlight-yellow);
+            text-decoration: none;
+            word-break: break-all;
+        }
+         .footer a:hover {
+             text-decoration: underline;
+         }
+
+        .footer .website-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer img {
+            height: 24px; /* Adjusted */
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>ITI पास के लिए सरकारी भर्ती</h1>
+    </div>
+    <div class="subtitle">
+        {{Headline}}
+    </div>
+
+    <div class="content">
+        <div class="left-container">
+            <div class="description-text">
+                 <h2 class="highlight">{{Description}} <span class="sub-description">{{Sub_Description}}</span></h2>
+            </div>
+            <h2 class="post-count">कुल पद - {{Post_Count}}</h2>
+        </div>
+        <div class="clip-path-container">
+            <div class="circle-image">
+                <img alt="भर्ती लोगो" src="{{Logo_URL}}" />
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>Last Date - {{Last_Date}}</div>
+        <div class="website-link">
+            More Details Visit - <a href="https://www.iticareer.in" target="_blank" rel="noopener noreferrer">www.iticareer.in</a>
+            <img alt="ITI Career Favicon" src="https://www.iticareer.in/favicon.ico" />
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

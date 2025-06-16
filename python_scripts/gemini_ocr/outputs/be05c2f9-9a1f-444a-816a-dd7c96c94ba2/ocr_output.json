@@ -1,0 +1,433 @@
+{
+    "all_extracted_questions_sorted": [
+        {
+            "question_number": "1.",
+            "question_text": "\\(√64009\\) = ?",
+            "options": [
+                "(a) 803",
+                "(b) 423",
+                "(c) 253",
+                "(d) 323"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "रेलवे परीक्षा, 2009"
+        },
+        {
+            "question_number": "2.",
+            "question_text": "\\(√894916\\) = ?",
+            "options": [
+                "(a) 856",
+                "(b) 920",
+                "(c) 946",
+                "(d) 880",
+                "(e) 768"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "बैंक पी०ओ० परीक्षा, 2006"
+        },
+        {
+            "question_number": "3.",
+            "question_text": "\\(√9216\\) + \\(√12544\\) = ?",
+            "options": [
+                "(a) 200",
+                "(b) 196",
+                "(c) 218",
+                "(d) 208",
+                "(e) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "बैंक पी०ओ० परीक्षा, 2006"
+        },
+        {
+            "question_number": "4.",
+            "question_text": "\\(√8464\\) + √? = 102",
+            "options": [
+                "(a) 100",
+                "(b) 225",
+                "(c) 400",
+                "(d) 625",
+                "(e) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "5.",
+            "question_text": "\\(√2500\\) + \\(√961\\) = (?)²",
+            "options": [
+                "(a) 81",
+                "(b) 3",
+                "(c) 6561",
+                "(d) 9",
+                "(e) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "6.",
+            "question_text": "\\(√5+\\)\\(√11+\\)\\(√19+\\)\\(√29+\\)\\(√49\\) = ?",
+            "options": [
+                "(a) 3",
+                "(b) 2",
+                "(c) 4",
+                "(d) 6"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "एस०एस०सी० परीक्षा, 2009"
+        },
+        {
+            "question_number": "7.",
+            "question_text": "\\(√24\\) + \\(__MATHJAX_WRAPPED_1__ / __MATHJAX_WRAPPED_2__\\) = ?",
+            "options": [
+                "(a) 2\\(√6\\)",
+                "(b) 2",
+                "(c) 6\\(√2\\)",
+                "(d) \\(√__MATHJAX_WRAPPED_0__\\)"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "8.",
+            "question_text": "? / \\(49 = 16 / 4\\)?",
+            "options": [
+                "(a) 48",
+                "(b) 18",
+                "(c) 38",
+                "(d) 28",
+                "(e) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "बैंक पी०ओ० परीक्षा, 2009"
+        },
+        {
+            "question_number": "9.",
+            "question_text": "\\(9 / 16\\) = ?",
+            "options": [
+                "(a) \\(3 / 4\\)",
+                "(b) 1 \\(1 / 4\\)",
+                "(c) 1.125",
+                "(d) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "10.",
+            "question_text": "\\(√110\\) / ? = \\(1 / 4\\)",
+            "options": [
+                "(a) 19.5",
+                "(b) 10.25",
+                "(c) 10.5",
+                "(d) 11.5"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "11.",
+            "question_text": "\\(__MATHJAX_WRAPPED_0__ / __MATHJAX_WRAPPED_1__\\) = ?",
+            "options": [
+                "(a) \\(√__MATHJAX_WRAPPED_0__\\)",
+                "(b) \\(3 / __MATHJAX_WRAPPED_0__\\)",
+                "(c) \\(3 / 2\\)",
+                "(d) \\(√2\\)"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "12.",
+            "question_text": "1694 / ? + \\(14 = 25\\)",
+            "options": [
+                "(a) 11",
+                "(b) 12",
+                "(c) 14",
+                "(d) 22"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "13.",
+            "question_text": "2880 / ? = 8",
+            "options": [
+                "(a) 180",
+                "(b) 750",
+                "(c) 540",
+                "(d) 360",
+                "(e) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "बैंक पी०ओ० परीक्षा, 2008"
+        },
+        {
+            "question_number": "14.",
+            "question_text": "0.009 x 0.036 x 0.016 x \\(0.8 / 0.002\\) x 0.0008 x 0.0002 = ?",
+            "options": [
+                "(a) 34",
+                "(b) 36",
+                "(c) 38",
+                "(d) 39"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "एस०एस०सी० परीक्षा, 2010"
+        },
+        {
+            "question_number": "15.",
+            "question_text": "\\(√900\\) + \\(√0.09\\) - \\(√0.000009\\) = ?",
+            "options": [
+                "(a) \\(30-027\\)",
+                "(b) \\(30-297\\)",
+                "(c) \\(30-097\\)",
+                "(d) \\(30-197\\)"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "16.",
+            "question_text": "\\(√0.0081\\) = ?",
+            "options": [
+                "(a) 0.09",
+                "(b) 0.9",
+                "(c) 0.08",
+                "(d) 0.81"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "एस०एस०सी० परीक्षा, 2009 / एस०एस०सी० परीक्षा, 2008"
+        },
+        {
+            "question_number": "17.",
+            "question_text": "\\(√0.01\\) + \\(√0.0064\\) = ?",
+            "options": [
+                "(a) 0.03",
+                "(b) 0.3",
+                "(c) 0.3\\(√2\\)",
+                "(d) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "18.",
+            "question_text": "\\(√.00121\\) / .00289 = ?",
+            "options": [
+                "(a) \\(170 / 17\\)",
+                "(b) \\(11 / 110\\)",
+                "(c) \\(17 / 11\\)",
+                "(d) \\(0.17 / 11\\)"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "19.",
+            "question_text": "1.21 x \\(0.9 / 1.1\\) x 0.11 = ?",
+            "options": [
+                "(a) 2",
+                "(b) 3",
+                "(c) 9",
+                "(d) 11"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "20.",
+            "question_text": "-081 x 4.84 / -.0064 x 6.25 = ?",
+            "options": [
+                "(a) 9",
+                "(b) 0.9",
+                "(c) 99",
+                "(d) 0.99"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "21.",
+            "question_text": "9.5 x 0.0085 x 18.9 / -0.017 x 1.9 x 2.1 = ?",
+            "options": [
+                "(a) 0.15",
+                "(b) 0.5",
+                "(c) 15",
+                "(d) 250"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "22.",
+            "question_text": "यदि \\(√1\\) + \\(x / __MATHJAX_WRAPPED_0__\\) हो, तो x = ?",
+            "options": [
+                "(a) 1",
+                "(b) 12",
+                "(c) 13",
+                "(d) 25"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "23.",
+            "question_text": "यदि \\(√4ⁿ\\) = 1024 हो, तो n = ?",
+            "options": [
+                "(a) 5",
+                "(b) 8",
+                "(c) 10",
+                "(d) 12"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "रेलवे परीक्षा, 2006"
+        },
+        {
+            "question_number": "24.",
+            "question_text": "यदि \\(√__MATHJAX_WRAPPED_0__\\) हो, तो (\\(√18225\\) + \\(√182.25\\) + \\(√1.8225\\) + \\(√.018225\\)) = ?",
+            "options": [
+                "(a) 142.875",
+                "(b) 137.795",
+                "(c) 149.985",
+                "(d) 1499.85"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "25.",
+            "question_text": "यदि \\(√__MATHJAX_WRAPPED_0__\\) हो, तो \\(√60.84\\) + \\(√0.6084\\) + \\(√.006084\\) + \\(√.00006084\\) का मान क्या होगा?",
+            "options": [
+                "(a) 0.86658",
+                "(b) 8.6658",
+                "(c) 86.658",
+                "(d) 866.58"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "रेलवे परीक्षा, 2006"
+        },
+        {
+            "question_number": "26.",
+            "question_text": "\\(√6\\) + \\(√6\\) + \\(√6\\) +........∞ = ?",
+            "options": [
+                "(a) 3",
+                "(b) 4",
+                "(c) 5",
+                "(d) 6"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "एस०एस०सी० परीक्षा, 2010"
+        },
+        {
+            "question_number": "27.",
+            "question_text": "\\(√.0064\\) = ?",
+            "options": [
+                "(a) .8",
+                "(b) .08",
+                "(c) .008",
+                "(d) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "28.",
+            "question_text": "0.9 / ? = 3",
+            "options": [
+                "(a) 0.3",
+                "(b) 0.03",
+                "(c) 0.9",
+                "(d) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "29.",
+            "question_text": "\\(√0.121\\) = ?",
+            "options": [
+                "(a) 0.11",
+                "(b) .011",
+                "(c) 1.1",
+                "(d) 1.01",
+                "(e) इनमें से कोई नहीं"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "30.",
+            "question_text": "\\(√2\\) + \\(√2\\) + \\(√2\\) +........∞ = ?",
+            "options": [
+                "(a) 1",
+                "(b) 1.5",
+                "(c) 2",
+                "(d) 2.5"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": null
+        },
+        {
+            "question_number": "31.",
+            "question_text": "(\\(__MATHJAX_WRAPPED_0__ / __MATHJAX_WRAPPED_1__\\)) = ?",
+            "options": [
+                "(a) (\\(√__MATHJAX_WRAPPED_0__\\))",
+                "(b) (\\(√__MATHJAX_WRAPPED_0__\\))",
+                "(c) \\(√2\\)\\(√2\\)",
+                "(d) (1 - \\(√2\\))"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "रेलवे परीक्षा, 2006"
+        },
+        {
+            "question_number": "32.",
+            "question_text": "यदि \\(__MATHJAX_WRAPPED_2__ / __MATHJAX_WRAPPED_3__\\) + \\(2 = a + b\\) \\(√7\\) हो, तो a = ?",
+            "options": [
+                "(a) \\(11 / 3\\)",
+                "(b) -\\(4 / 3\\)",
+                "(c) \\(4 / 3\\)",
+                "(d) -4\\(√__MATHJAX_WRAPPED_0__\\)"
+            ],
+            "answer": null,
+            "explanation": null,
+            "source_info": "एस०एस०सी० परीक्षा, 2007"
+        }
+    ],
+    "header_footer_info": {
+        "page_1_header": "प्रश्नावली 5A\nनिम्नलिखित प्रश्नों में से प्रत्येक में ठीक उत्तर को चिह्नांकित (✔) कीजिए:",
+        "page_1_footer": null,
+        "page_2_header": "वर्गमूल तथा घनमूल ■ 61",
+        "page_2_footer": null
+    }
+}

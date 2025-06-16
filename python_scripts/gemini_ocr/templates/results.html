@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OCR Results - {{ model }}</title>
+
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Your Custom CSS Link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- MathJax Configuration (Load for BOTH Structured Math and Raw Math Modes) -->
+    {% if content_mode == 'math' or content_mode == 'raw_math' %} <!-- <<< Condition includes raw_math -->
+    <script>
+        console.log("MathJax required (mode: {{ content_mode }}). Configuring...");
+        MathJax = {
+            tex: {
+                inlineMath: [ ['\\(','\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            svg: { fontCache: 'global' },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process' // Elements with this class will be processed
+            },
+            startup: {
+                 pageReady: () => {
+                     console.log("MathJax Startup: pageReady triggered.");
+                     return MathJax.startup.defaultPageReady();
+                 },
+                 ready: () => {
+                     console.log('MathJax Startup: Ready hook triggered.');
+                     MathJax.startup.defaultReady();
+                     console.log('MathJax Startup: defaultReady called.');
+                     // Typesetting is triggered manually later for specific containers
+                 }
+             }
+        };
+        window.addEventListener('error', (event) => { if (event.target.id === 'MathJax-script') { console.error('MathJax script failed to load:', event); } }, true);
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    {% endif %}
+    <!-- End MathJax -->
+
+    <!-- Basic JS for Preview Toggle (Only relevant for Structured MCQ modes) -->
+    <script>
+        // Function showPreview remains the same - it only affects MCQ views
+        function showPreview(type) {
+            const fullPreview = document.getElementById('preview-container-full');
+            const keyPreview = document.getElementById('preview-container-key');
+            const paginationControls = document.getElementById('pagination-controls');
+            if (!fullPreview || !keyPreview || !paginationControls) return; // Exit if not in MCQ mode elements
+
+            if (type === 'full') {
+                fullPreview.style.display = 'block';
+                keyPreview.style.display = 'none';
+                if (paginationControls.innerHTML.trim() !== '') {
+                    paginationControls.style.display = 'flex';
+                } else {
+                    paginationControls.style.display = 'none';
+                }
+            } else if (type === 'key') {
+                fullPreview.style.display = 'none';
+                keyPreview.style.display = 'block';
+                paginationControls.style.display = 'none';
+                if(fullBtn) fullBtn.classList.remove('active');
+                if(keyBtn) keyBtn.classList.add('active');
+                if (keyPreview.innerHTML.trim().startsWith('<!--') || keyPreview.innerHTML.trim() === '') {
+                      keyPreview.innerHTML = '<p style="text-align:center; color: #6c757d;">(Answer Key view implementation needed)</p>';
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>✅ Processing Complete!</h1>
+        <p class="subtitle">Aapki file process ho gayi hai.</p>
+
+        <!-- Flash Messages Area (Unchanged) -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="alert alert-{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Processing Summary (Updated label for raw_math) -->
+        <div class="summary-section">
+             <h2>📊 Processing Summary</h2>
+            <ul>
+                <li><strong>Company:</strong> {{ company | capitalize }}</li>
+                <li><strong>Model:</strong> {{ model }}</li>
+                <li><strong>Language:</strong> {{ language }}</li>
+                <li><strong>Content Mode:</strong>
+                     {% if content_mode == 'text' %}Structured Text (MCQs)
+                     {% elif content_mode == 'math' %}Structured Math (MCQs + LaTeX Rendered)
+                     {% elif content_mode == 'raw' %}Raw Text (OCR Only)
+                     {% elif content_mode == 'raw_math' %}Raw Text (OCR + Math/LaTeX Rendered) <!-- <<< Updated Label -->
+                     {% else %}{{ content_mode | capitalize }}
+                     {% endif %}
+                </li>
+                {# Only show Explanation/Answer options if NOT a raw mode #}
+                {% if content_mode != 'raw' and content_mode != 'raw_math' %}
+                     <li><strong>Explanation Requested:</strong> {{ 'Yes' if generate_explanation else 'No' }}</li>
+                     <li><strong>Answer Generation Requested:</strong> {{ 'Yes (AI Attempted)' if generate_answer else 'No (Extract Only)' }}</li>
+                {% endif %}
+                <li><strong>Custom Prompt Used:</strong> {{ 'Yes' if custom_prompt_used else 'No' }}</li>
+                <li><strong>Pages Processed:</strong> {{ num_pages }}</li>
+                {# Only show question count if NOT a raw mode #}
+                {% if content_mode != 'raw' and content_mode != 'raw_math' %}
+                     <li><strong>Questions Extracted:</strong> {{ num_questions }}</li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <hr class="separator">
+
+        <!-- Download Results (Unchanged - logic is correct) -->
+        <h2>⬇️ Download Results</h2>
+        <div class="download-links">
+            {# Condition 1: Show JSON/Excel ONLY for non-raw modes #}
+            {% if content_mode != 'raw' and content_mode != 'raw_math' %}
+                <a href="{{ url_for('download_file', job_id=job_id, file_format='json') }}" class="download-btn">JSON</a>
+                <a href="{{ url_for('download_file', job_id=job_id, file_format='excel') }}" class="download-btn">Excel (.xlsx)</a>
+            {% endif %}
+
+            {# Condition 2: Show DOCX always #}
+            <a href="{{ url_for('download_file', job_id=job_id, file_format='doc') }}" class="download-btn">Word (.docx)</a>
+
+            {# Condition 3: Show ZIP ONLY for non-raw modes AND if input was PDF #}
+            {% if is_pdf and content_mode != 'raw' and content_mode != 'raw_math' %}
+                <a href="{{ url_for('download_file', job_id=job_id, file_format='zip') }}" class="download-btn">All Structured Files (.zip)</a>
+            {% endif %}
+        </div>
+
+        <hr class="separator">
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <div class="preview-header">
+                 <h2>📄 Preview</h2>
+                 {# Toggle Buttons - Only relevant if Structured MCQ mode #}
+                 {% if content_mode == 'text' or content_mode == 'math' %}
+                 {% endif %}
+            </div>
+
+            {# === CONDITIONAL PREVIEW CONTENT === #}
+
+            {% if content_mode == 'raw' or content_mode == 'raw_math' %}
+                {# --- RAW TEXT PREVIEW (Plain or with LaTeX Rendered) --- #}
+                {% if content_mode == 'raw' %}
+                     <p class="preview-note">📝 Raw OCR mode was used. Extracted text is shown below and in DOCX.</p>
+                 {% elif content_mode == 'raw_math' %}
+                     <p class="preview-note">📝 Raw OCR mode with Math/LaTeX was used. Extracted text is shown below (attempting to render math) and in DOCX.</p> <!-- <<< Updated Note -->
+                 {% endif %}
+                 <!-- Add 'tex2jax_process' class ONLY if in raw_math mode -->
+                <div class="preview-content raw-text-container {% if content_mode == 'raw_math' %}tex2jax_process{% endif %}">
+                     {% if raw_text_preview %}
+                         {{ raw_text_preview }} {# Output the raw text, including \(...\) #}
+                     {% else %}
+                         <p style="text-align:center; color: #dc3545;">[Could not load raw text preview]</p>
+                     {% endif %}
+                </div>
+                {# MathJax Note for Raw Math Mode #}
+                {% if content_mode == 'raw_math' %}
+                   <p class="preview-note">Note: Mathematical equations (expected in standard `\\(...\\)` format) are rendered using MathJax.</p>
+                {% endif %}
+                {# No pagination needed for raw previews #}
+
+            {% elif content_mode == 'text' or content_mode == 'math' %}
+                {# --- MCQ PREVIEW (Text or Math - Unchanged structure) --- #}
+                <script type="application/json" id="grouped-data-holder">
+                    {{ grouped_questions_json | default("{}") | tojson }}
+                </script>
+                <div id="preview-container-full" class="preview-content {% if content_mode == 'math' %}tex2jax_process{% endif %}" style="display: block;">
+                     <p style="text-align:center; color: #6c757d;">Loading question preview...</p>
+                </div>
+                <div id="preview-container-key" class="preview-content" style="display: none;">
+                     <p style="text-align:center; color: #6c757d;">(Answer Key view implementation needed)</p>
+                </div>
+                {% if content_mode == 'math' %}
+                   <p class="preview-note">Note: Mathematical equations (expected in standard `\\(...\\)` format) are rendered using MathJax.</p>
+                {% endif %}
+                <div id="pagination-controls" class="pagination-controls" style="display: none;"></div>
+
+            {% else %}
+                <p style="text-align:center; color: orange;">⚠️ Unknown content mode requested: {{ content_mode | escape }}</p>
+            {% endif %}
+            {# === END CONDITIONAL PREVIEW CONTENT === #}
+
+        </div>
+        <!-- End Preview Section -->
+
+        <a href="{{ url_for('index') }}" class="back-link">↩️ Doosri file upload karein</a>
+
+    </div> <!-- End Container -->
+
+    <!-- === PAGINATION JAVASCRIPT (Only for Structured MCQ Modes) === -->
+    {% if content_mode == 'text' or content_mode == 'math' %}
+        <script>
+            // Pagination JS unchanged - it already handles triggering MathJax for #preview-container-full if mode is 'math'
+            document.addEventListener('DOMContentLoaded', () => {
+                const currentContentMode = "{{ content_mode }}"; // Already available inside this block
+                if (currentContentMode === 'raw' || currentContentMode === 'raw_math') {
+                     console.log("Pagination JS: Skipping setup for raw mode.");
+                     return;
+                }
+                console.log("Pagination JS: Setting up for MCQ mode...");
+
+                let currentPage = 1;
+                let groupedQuestions = {};
+                let availablePages = []; // Stores the page numbers that actually have questions
+
+                const previewContainer = document.getElementById('preview-container-full');
+                const paginationControlsContainer = document.getElementById('pagination-controls');
+                const dataHolder = document.getElementById('grouped-data-holder');
+                const isMath = currentContentMode === "math";
+
+                if (!previewContainer || !paginationControlsContainer || !dataHolder) {
+                    console.error("Pagination JS: Required elements for MCQ pagination not found.");
+                    if (previewContainer) previewContainer.innerHTML = "<p style='text-align:center; color: red;'>Error: Preview container missing.</p>";
+                    return;
+                }
+
+                // --- Load and Parse JSON Data ---
+                try {
+                    const jsonString = dataHolder.textContent.trim();
+                    if (jsonString && jsonString !== '{}' && jsonString !== '\"{}\"') {
+                         const rawData = JSON.parse(JSON.parse(jsonString));
+                        if (typeof rawData !== 'object' || rawData === null) { throw new Error("Parsed data is not an object."); }
+                        groupedQuestions = {}; availablePages = [];
+                        if (Array.isArray(rawData)) {
+                            console.warn("Pagination JS: Received data as an Array, assuming single page.");
+                            let pageNum = 1;
+                            if (rawData.length > 0 && rawData[0].original_page) { pageNum = parseInt(rawData[0].original_page, 10) || 1;}
+                            if (rawData.length > 0) { groupedQuestions[pageNum] = rawData; availablePages.push(pageNum); }
+                        } else {
+                            Object.entries(rawData).forEach(([key, value]) => {
+                                const match = key.match(/^page_(\d+)_MCQs$/);
+                                if (match && Array.isArray(value) && value.length > 0) {
+                                    const pageNum = parseInt(match[1], 10);
+                                    if (!isNaN(pageNum)) { groupedQuestions[pageNum] = value; availablePages.push(pageNum); }
+                                }
+                            });
+                        }
+                        availablePages.sort((a, b) => a - b);
+                        if (availablePages.length > 0) { currentPage = availablePages[0]; console.log("Pagination JS: Available pages with questions:", availablePages); }
+                        else { console.log("Pagination JS: No pages with MCQs found."); previewContainer.innerHTML = "<p style='text-align:center; color: #6c757d;'>No structured questions found.</p>"; paginationControlsContainer.style.display = 'none'; return; }
+                    } else { console.log("Pagination JS: JSON data holder empty."); previewContainer.innerHTML = "<p style='text-align:center; color: #6c757d;'>No preview data available.</p>"; paginationControlsContainer.style.display = 'none'; return; }
+                } catch (e) { console.error("Pagination JS: Error parsing JSON:", e); previewContainer.innerHTML = "<p style='text-align:center; color: red;'>Error loading question data.</p>"; groupedQuestions = {}; availablePages = []; currentPage = 1; paginationControlsContainer.style.display = 'none'; return; }
+
+                // --- Helper Functions (Escape/Sanitize/Format) ---
+                function escapeHtml(unsafe) {
+                    if (unsafe === null || typeof unsafe === 'undefined') return '';
+                    return String(unsafe).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+                }
+                function sanitizeMathLatex(text) { // Basic passthrough
+                    if (!text || typeof text !== 'string') return text; return text;
+                }
+                function maybeEscape(str) { return isMath ? sanitizeMathLatex(str) : escapeHtml(str); }
+                function formatQuestionBlock(q, indexOnPage) {
+                    let lines = []; const qNumDisplay = q.question_number ? maybeEscape(q.question_number) : `[Unk #${indexOnPage + 1}]`; const sourcePgDisplay = q.original_page ? maybeEscape(q.original_page) : '?';
+                    lines.push(`<strong>Q. ${qNumDisplay}</strong> (Source Pg: ${sourcePgDisplay})`);
+                    if (q.question_text) lines.push(`<div class="question-text">${maybeEscape(q.question_text)}</div>`);
+                    if (q.options && Array.isArray(q.options)) {
+                        lines.push('<ul class="options-list">');
+                        q.options.forEach((opt, i) => { const optionText = (opt !== null && typeof opt !== 'undefined') ? maybeEscape(opt) : '[Empty Option]'; lines.push(`<li>${String.fromCharCode(65 + i)}) ${optionText}</li>`); });
+                        lines.push('</ul>');
+                    }
+                    if (q.answer !== null && typeof q.answer !== 'undefined' && String(q.answer).trim() !== '') lines.push(`<div class="answer-field"><strong>Answer:</strong> ${maybeEscape(q.answer)}</div>`);
+                    if (q.explanation !== null && typeof q.explanation !== 'undefined' && String(q.explanation).trim() !== '') lines.push(`<div class="explanation-field"><strong>Explanation:</strong> ${maybeEscape(q.explanation)}</div>`);
+                    if (q.source_info !== null && typeof q.source_info !== 'undefined' && String(q.source_info).trim() !== '') lines.push(`<div class="source-info-field">(Source: ${maybeEscape(q.source_info)})</div>`);
+                    return `<div class="question-block">${lines.join('')}</div>`;
+                }
+
+                // --- Display Logic ---
+                 function displayPage(pdfPageNumber) {
+                    if (availablePages.indexOf(pdfPageNumber) === -1) { console.warn(`Pagination JS: Attempted display page ${pdfPageNumber}, no questions.`); previewContainer.innerHTML = `<p style='text-align:center; color: #6c757d;'>No questions found for PDF Page ${pdfPageNumber}.</p>`; updatePaginationControls(pdfPageNumber); return; }
+                    currentPage = pdfPageNumber; previewContainer.innerHTML = '';
+                    const questionsOnPage = groupedQuestions[pdfPageNumber] || [];
+                    if (questionsOnPage.length === 0) { previewContainer.innerHTML = `<p style='text-align:center; color: #6c757d;'>No questions found for PDF Page ${pdfPageNumber}.</p>`; }
+                    else { const pageContentHTML = questionsOnPage.map(formatQuestionBlock).join('<hr class="question-separator">'); previewContainer.innerHTML = pageContentHTML; }
+                    updatePaginationControls(pdfPageNumber);
+
+                    // Trigger MathJax only for structured math mode inside pagination logic
+                    if (isMath && typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                        console.log("Pagination JS: Requesting MathJax typeset for #preview-container-full, page", pdfPageNumber);
+                        setTimeout(() => {
+                            MathJax.typesetPromise([previewContainer]) // Target structured container
+                                .then(() => { console.log("Pagination JS: MathJax typeset completed for page", pdfPageNumber); })
+                                .catch((err) => { console.error(`Pagination JS: MathJax failed on page ${pdfPageNumber}:`, err); });
+                        }, 50);
+                    }
+                 }
+
+                // --- Pagination Controls Update Logic ---
+                function updatePaginationControls(currentDisplayedPage) {
+                    if (!paginationControlsContainer) return; paginationControlsContainer.innerHTML = '';
+                    const totalPagesWithQuestions = availablePages.length;
+                    if (totalPagesWithQuestions <= 1) { paginationControlsContainer.style.display = 'none'; return; }
+                    paginationControlsContainer.style.display = 'flex';
+                    const currentIndex = availablePages.indexOf(currentDisplayedPage);
+                    const prevButton = document.createElement('button'); prevButton.textContent = '« Previous Page'; prevButton.classList.add('pagination-btn'); prevButton.disabled = currentIndex <= 0; prevButton.addEventListener('click', () => { if (currentIndex > 0) { displayPage(availablePages[currentIndex - 1]); } }); paginationControlsContainer.appendChild(prevButton);
+                    const pageInfo = document.createElement('span'); pageInfo.textContent = `PDF Page: ${currentDisplayedPage} (${currentIndex + 1} / ${totalPagesWithQuestions})`; pageInfo.className = 'pagination-info'; paginationControlsContainer.appendChild(pageInfo);
+                    const nextButton = document.createElement('button'); nextButton.textContent = 'Next Page »'; nextButton.classList.add('pagination-btn'); nextButton.disabled = currentIndex >= totalPagesWithQuestions - 1; nextButton.addEventListener('click', () => { if (currentIndex < totalPagesWithQuestions - 1) { displayPage(availablePages[currentIndex + 1]); } }); paginationControlsContainer.appendChild(nextButton);
+                }
+
+                // --- Initial Display ---
+                 if (availablePages.length > 0) {
+                    displayPage(currentPage);
+                    showPreview('full'); // Ensure the full preview is visible by default
+                 } else { console.log("Pagination JS: No available pages to display initially."); } // Case handled during parsing
+            });
+        </script>
+    {% endif %}
+    <!-- === END PAGINATION JAVASCRIPT === -->
+
+    <!-- === RAW MATH PREVIEW MATHJAX TRIGGER (Only for Raw Math Mode) === -->
+    {% if content_mode == 'raw_math' %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             console.log("Raw Math mode JS: DOM Loaded. Checking for MathJax.");
+             // Wait a fraction longer to ensure MathJax script itself has loaded potentially
+             setTimeout(() => {
+                if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                    const rawContainer = document.querySelector('.raw-text-container.tex2jax_process'); // Target the specific container
+                    if (rawContainer) {
+                        console.log("Raw Math mode JS: Found container and MathJax. Requesting typeset.");
+                        MathJax.typesetPromise([rawContainer]) // Target the raw container
+                            .then(() => {
+                                console.log("Raw Math mode JS: MathJax typeset completed for raw text container.");
+                            })
+                            .catch((err) => {
+                                console.error("Raw Math mode JS: MathJax failed on raw text container:", err);
+                                // Optionally add a visible error message
+                                // rawContainer.insertAdjacentHTML('beforeend', '<p style="color:red; font-family: sans-serif;">Error rendering math formulas.</p>');
+                            });
+                    } else {
+                        console.error("Raw Math mode JS: Could not find '.raw-text-container.tex2jax_process' to typeset.");
+                    }
+                } else {
+                    console.warn("Raw Math mode JS: MathJax object not found after delay. Cannot typeset raw preview.");
+                }
+             }, 100); // Slightly longer delay might help ensure MathJax is ready
+        });
+    </script>
+    {% endif %}
+    <!-- === END RAW MATH PREVIEW MATHJAX TRIGGER === -->
+
+</body>
+</html>

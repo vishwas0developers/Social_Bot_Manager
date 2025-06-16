@@ -1,0 +1,270 @@
+```json
+{
+  "page_1_MCQs": [
+    {
+      "question_number": "1.",
+      "question_text": "\\(\sqrt{64009} = ?\\)",
+      "options": ["803", "423", "253", "323"],
+      "answer": null,
+      "explanation": "The square root of 64009 is 253. Therefore, the correct answer is (c) 253.",
+      "source_info": null
+    },
+    {
+      "question_number": "2.",
+      "question_text": "\\(\sqrt{894916} = ?\\)",
+      "options": ["856", "920", "880", "768"],
+      "answer": null,
+      "explanation": "The square root of 894916 is 946. Therefore, the correct answer is (c) 946.",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2006)"
+    },
+    {
+      "question_number": "3.",
+      "question_text": "\\(\sqrt{9216} + \\sqrt{12544} = ?\\)",
+      "options": ["200", "196", "218", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "√9216 = 96 and √12544 = 112.  96 + 112 = 208. Therefore, the correct answer is (d) 208.",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2006)"
+    },
+    {
+      "question_number": "4.",
+      "question_text": "\\(\sqrt{8464} + \\sqrt{102} = ?\\)",
+      "options": ["100", "225", "400", "625"],
+      "answer": null,
+      "explanation": "√8464 = 92 and √100 = 10. 92 + 10 = 102.  Therefore, the closest answer is (a) 100, although this is not exact.",
+      "source_info": null
+    },
+    {
+      "question_number": "5.",
+      "question_text": "\\(\sqrt{2500} + \\sqrt{961} = (?)^{2}\\)",
+      "options": ["81", "3", "6561", "9"],
+      "answer": null,
+      "explanation": "√2500 = 50 and √961 = 31. 50 + 31 = 81. √81 = 9. Therefore the correct answer is (d) 9.",
+      "source_info": null
+    },
+    {
+      "question_number": "6.",
+      "question_text": "\\(\sqrt{11} + \\sqrt{19} + \\sqrt{29} + \\sqrt{49} = ?\\)",
+      "options": ["3", "2", "4", "6"],
+      "answer": null,
+      "explanation": "√49 = 7.  The other square roots are irrational, making the sum irrational and close to 7 + 3.3 + 4.4 + 3.1 = 18.  None of the options match exactly; however, 6 is the closest to the expected integer sum.",
+      "source_info": "(एप०प्र०बैंक परीक्षा, 2009)"
+    },
+    {
+      "question_number": "7.",
+      "question_text": "\\(\frac{\\sqrt{24} + \\sqrt{216}}{\\sqrt{56}} = ?\\)",
+      "options": ["2√6", "2", "6√2", "\\(\frac{\\sqrt{6}}{3}\\)"],
+      "answer": null,
+      "explanation": "Simplify the radicals: √24 = 2√6, √216 = 6√6, √56 = 2√14.  Then (2√6 + 6√6) / (2√14) = 8√6 / (2√14) = 4√6/√14. This doesn't match any of the options precisely. Requires further simplification or there may be an error in the question or options.",
+      "source_info": null
+    },
+    {
+      "question_number": "8.",
+      "question_text": "48 = ?",
+      "options": ["16", "18", "38", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "The question seems incomplete.  It's missing an operator or context to determine what 48 equals.",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2009)"
+    },
+    {
+      "question_number": "9.",
+      "question_text": "\\(\sqrt{\\frac{16}{9}} = ?\\)",
+      "options": ["1-1/2", "1-1/4", "1-1/5", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "√(16/9) = 4/3 = 1 and 1/3.  None of the options match exactly, but 1-1/4 is the closest.",
+      "source_info": null
+    },
+    {
+      "question_number": "10.",
+      "question_text": "\\(\sqrt{195} = ?\\)",
+      "options": ["10", "10.25", "10.5", "11.5"],
+      "answer": null,
+      "explanation": "√195 ≈ 13.96.  The closest option is 10.5.",
+      "source_info": null
+    },
+    {
+      "question_number": "11.",
+      "question_text": "\\(\sqrt{\\frac{128}{25}} = ?\\)",
+      "options": ["\\(\sqrt{5}\\)", "3", "\\(\\frac{3}{2}\\)", "\\(\\frac{5}{2}\\)"],
+      "answer": null,
+      "explanation": "√(128/25) = √128 / √25 = 8√2 / 5 ≈ 2.26. The closest option is 5/2 = 2.5",
+      "source_info": null
+    },
+    {
+      "question_number": "12.",
+      "question_text": "\\(\sqrt{1694} - 25 = ?\\)",
+      "options": ["11", "12", "14", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "√1694 ≈ 41.16 - 25 = 16.16.  The closest option is 14.",
+      "source_info": null
+    },
+    {
+      "question_number": "13.",
+      "question_text": "2880 \\(\div\\) ?",
+      "options": ["11", "12", "14", "540"],
+      "answer": null,
+      "explanation": "The question is incomplete. It needs a second number to complete the division.",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2008)"
+    },
+    {
+      "question_number": "14.",
+      "question_text": "0.009 - 0.036 + 0.016 = ?",
+      "options": ["-0.002", "0.008", "0.0002", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "0.009 - 0.036 + 0.016 = -0.011. None of the options are correct.",
+      "source_info": "(एप०प्र०बैंक परीक्षा, 2010)"
+    },
+    {
+      "question_number": "15.",
+      "question_text": "30.27 + 0.05 - 0.000297 = ?",
+      "options": ["30.0997", "30.2997", "30.1997", "30.297"],
+      "answer": null,
+      "explanation": "30.27 + 0.05 - 0.000297 = 30.319703. The closest option is 30.2997",
+      "source_info": "(एप०प्र०बैंक परीक्षा, 2009)"
+    },
+    {
+      "question_number": "16.",
+      "question_text": "\\(\sqrt{0.0081} = ?\\)",
+      "options": ["0.09", "0.9", "0.009", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "√0.0081 = 0.09",
+      "source_info": "(एप०प्र०बैंक परीक्षा, 2008)"
+    },
+    {
+      "question_number": "17.",
+      "question_text": "3 + 0.03 + 0.0064 = ?",
+      "options": ["3.0364", "0.3", "0.3", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "3 + 0.03 + 0.0064 = 3.0364",
+      "source_info": null
+    },
+    {
+      "question_number": "18.",
+      "question_text": "259 \\(\div\\) ?",
+      "options": ["170", "17", "17", "0.17"],
+      "answer": null,
+      "explanation": "The question is incomplete. It needs a second number to complete the division.",
+      "source_info": null
+    },
+    {
+      "question_number": "19.",
+      "question_text": "1.1 \\(\times\\) 0.11 = ?",
+      "options": ["2", "0.3", "0.9", "0.11"],
+      "answer": null,
+      "explanation": "1.1 x 0.11 = 0.121. The closest option is 0.11.",
+      "source_info": null
+    }
+  ],
+  "page_2_MCQs": [
+    {
+      "question_number": "20.",
+      "question_text": "\\(\frac{-081 + 484}{-0.064 + 0.25} = ?\\)",
+      "options": ["99", "0.99", "9", "0.09"],
+      "answer": null,
+      "explanation": "(-81 + 484) / (-0.064 + 0.25) = 403 / 0.186 ≈ 2161.29",
+      "source_info": null
+    },
+    {
+      "question_number": "21.",
+      "question_text": "9.0017 \\(\times\\) 18.21 = ?",
+      "options": ["15", "15", "250", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "9.0017 x 18.21 ≈ 163.73",
+      "source_info": null
+    },
+    {
+      "question_number": "22.",
+      "question_text": "चौदह वर्ग का \\(\\frac{13}{14}\\) भाग = ?",
+      "options": ["12", "13", "12", "25"],
+      "answer": null,
+      "explanation": "14 x (13/14) = 13",
+      "source_info": null
+    },
+    {
+      "question_number": "23.",
+      "question_text": "यदि \\(\\sqrt{525} \\div 10.5 = n\\), तो \\(n = ?\\)",
+      "options": ["10", "12", "10", "12"],
+      "answer": null,
+      "explanation": "√525 ≈ 22.91. 22.91 / 10.5 ≈ 2.18.  None of the options are correct.",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2006)"
+    },
+    {
+      "question_number": "24.",
+      "question_text": "यदि \\(\\sqrt{144} \\times 85 = a\\), तो \\(\\sqrt{a} = ?\\)",
+      "options": ["149.895", "149.725", "149.895", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "√144 = 12. 12 x 85 = 1020. √1020 ≈ 31.94. None of the options are close to this value.",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2006)"
+    },
+    {
+      "question_number": "25.",
+      "question_text": "यदि 0.06084 + 0.00688 + 0.06084 + 0.0084 = x तथा 0.06658 + 0.00884 + 0.06658 + 0.0084 = y, तो x - y = ?",
+      "options": ["-0.00808", "-0.00608", "0.00808", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "x = 0.06084 + 0.00688 + 0.06084 + 0.0084 = 0.13696\ny = 0.06658 + 0.00884 + 0.06658 + 0.0084 = 0.1404\nx - y = 0.13696 - 0.1504 = -0.01344\nNone of the options match the calculated difference.",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2006)"
+    },
+    {
+      "question_number": "26.",
+      "question_text": "86.6558 + ........... = 866.58",
+      "options": ["86", "08", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "866.58 - 86.6558 = 779.9242",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2006)"
+    },
+    {
+      "question_number": "27.",
+      "question_text": "\\(\sqrt{0.064} = ?\\)",
+      "options": ["0.3", "0.8", "0.08", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "√0.064 = 0.256",
+      "source_info": "(उच्चतर माध्यमिक परीक्षा, 2010)"
+    },
+    {
+      "question_number": "28.",
+      "question_text": "\\(\sqrt{0.08} = ?\\)",
+      "options": ["0.08", "0.03", "0.3", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "√0.08 ≈ 0.283",
+      "source_info": null
+    },
+    {
+      "question_number": "29.",
+      "question_text": "\\(\sqrt{0.121} = ?\\)",
+      "options": ["0.11", "0.111", "0.11", "इनमें से कोई नहीं"],
+      "answer": null,
+      "explanation": "√0.121 = 0.11",
+      "source_info": null
+    },
+    {
+      "question_number": "30.",
+      "question_text": "\\(\sqrt{2} + \\sqrt{2} + .........\\) = ?",
+      "options": ["\\(\sqrt{2}\\)", "इनमें से कोई नहीं", "2", "2.5"],
+      "answer": null,
+      "explanation": "The question is incomplete.  It needs to specify how many √2 are added.",
+      "source_info": null
+    },
+    {
+      "question_number": "31.",
+      "question_text": "\\(\\sqrt{\\frac{2}{2}} = ?\\)",
+      "options": ["\\(\\sqrt{2} - 1\\)", "\\(\\sqrt{2} + 1\\)", "1", "2"],
+      "answer": null,
+      "explanation": "√(2/2) = √1 = 1",
+      "source_info": "(बैंक पी०ओ० परीक्षा, 2009)"
+    },
+    {
+      "question_number": "32.",
+      "question_text": "\\(\\sqrt{\\frac{11}{3} + \\frac{2}{3}} = ?\\)",
+      "options": ["3", "-3", "\\(\\frac{4}{3}\\)", "\\(\\frac{-4}{\sqrt{3}}\\)"],
+      "answer": null,
+      "explanation": "√((11/3) + (2/3)) = √(13/3) ≈ 2.08",
+      "source_info": "(एप०प्र०बैंक परीक्षा, 2007)"
+    }
+  ],
+  "header_footer_info": {
+    "page_1_header": "प्रश्नमाला 5A",
+    "page_1_footer": null,
+    "page_2_header": null,
+    "page_2_footer": "वस्तुनिष्ठ तथा गणनात्मक प्रश्न  61"
+  }
+}
+```

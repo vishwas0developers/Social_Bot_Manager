@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bot Management Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="discount-banner">
+        <p>Flash Sale! Get 20% off all plans for a limited time!</p>
+    </div>
+
+    <div style="position: absolute; top: 20px; right: 30px;">
+        <a href="/logout" style="
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: sans-serif;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        ">Logout</a>
+    </div>
+    
+    <div style="position: absolute; top: 20px; right: 150px;">
+        <a href="/login" style="
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: sans-serif;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        ">Login</a>
+    </div>
+
+    <div id="main-container">
+        <!-- Sidebar for Upload Form -->
+        <div id="sidebar">
+            <h2>Upload & Create Button</h2>
+            <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+                <label for="zip_file">Upload App as ZIP File:</label>
+                <input type="file" name="zip_file" id="zip_file" accept=".zip" required><br>
+
+                <label for="image">Upload Icon (Optional):</label>
+                <input type="file" name="image" id="image" accept="image/*"><br>
+
+                <label for="button_name">Enter Button Name:</label>
+                <input type="text" name="button_name" id="button_name" placeholder="Enter button name" required><br>
+
+                <button type="submit">Upload & Create Button</button>
+                <!-- Progress Bar Container -->
+                <div id="progress-container" style="display:none;">
+                    <h3>Uploading and Extracting...</h3>
+                    <div id="progress-bar" style="width: 0%; background-color: #4CAF50; height: 20px;"></div>
+                    <p id="progress-text">0%</p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Main Content for Displaying Buttons -->
+        <div id="content">
+            <h1>Bot Management Dashboard</h1>
+
+            <!-- Display Buttons Dynamically -->
+            <div id="button-container">
+                {% for button, folder, image_url in buttons %}
+                <div class="card" onclick="runScript('{{ folder }}')">
+                    <div class="icon-container">
+                        <i class="fas fa-pencil-alt edit-icon" onclick="editScript(event, '{{ folder }}', '{{ button }}')"></i>
+                    </div>
+                    <div class="image-container">
+                        <img src="{{ image_url }}" alt="{{ button }}">
+                    </div>
+                    <h3>{{ button }}</h3>
+                    <i class="fas fa-trash delete-icon" onclick="confirmDelete(event, '{{ folder }}')"></i>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('editModal')">&times;</span>
+            <h2>Edit Script</h2>
+            <form id="edit-form" enctype="multipart/form-data">
+                <input type="hidden" id="editFolderName" />
+                <label for="newButtonName">New Button Name:</label>
+                <input type="text" id="newButtonName" required>
+
+                <!-- Add New ZIP Upload Option -->
+                <label for="newZipFile">Upload New App as ZIP (Optional):</label>
+                <input type="file" id="newZipFile" name="zip_file" accept=".zip" /><br>
+
+                <label for="newImage">Upload New Image (Optional):</label>
+                <input type="file" id="newImage" name="image" accept="image/*" />
+
+                <button type="button" onclick="saveEdit()">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v={{ cache_version }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}?v={{ cache_version }}"></script>
+</body>
+
+</html>
