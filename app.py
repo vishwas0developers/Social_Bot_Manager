@@ -98,7 +98,6 @@ def create_button(folder_name):
     default_image_url = url_for('static', filename='images/default.png')
     return info.get("button_name", folder_name), folder_name, info.get("image", default_image_url)
 
-# New route to serve images dynamically from app folders
 @manager_bp.route('/app_logo/<app_name>/<image_filename>')
 def serve_app_logo(app_name, image_filename):
     """Serves the logo image from the specific app's folder."""
@@ -351,149 +350,82 @@ def delete_script(folder_name):
     script_dir = os.path.join(BASE_PATH, folder_name)
     buttons_data = load_buttons()
 
-    # Attempt to get the image filename from buttons_data to delete it from the app folder
+    # Step 1: Terminate running process
+    if folder_name in buttons_data and "pid" in buttons_data[folder_name]:
+        terminate_process_by_pid(buttons_data[folder_name]["pid"])
+        del buttons_data[folder_name]["pid"]
+
+    # Step 2: Extract custom image filename (if any)
     image_filename_to_delete = None
+    image_path_in_app_folder = None
     if folder_name in buttons_data and "image" in buttons_data[folder_name]:
         image_url = buttons_data[folder_name]["image"]
-        # Extract filename from the dynamic URL if it exists
-        # The URL format is expected to be like /app_logo/<app_name>/<image_filename>
-        if '/app_logo/' in image_url:
+        if "/app_logo/" in image_url:
             try:
-                # Split the URL by / and get the last part as filename
-                url_parts = image_url.split('/')
-                if len(url_parts) > 0:
-                    image_filename_to_delete = url_parts[-1]
-                    # Basic check to ensure it doesn't look like a path traversal attempt
-                    if '..' in image_filename_to_delete or '/' in image_filename_to_delete or '\\' in image_filename_to_delete:
-                         image_filename_to_delete = None # Treat as invalid filename
-            except Exception as e:
-                print(f"Error extracting filename from URL {image_url}: {e}")
-                image_filename_to_delete = None
-
-    # Construct the potential image path within the app folder
-    image_path_in_app_folder = None
+                parts = image_url.split('/')
+                if len(parts) > 0:
+                    image_filename_to_delete = parts[-1]
+                    if ".." in image_filename_to_delete or "/" in image_filename_to_delete or "\\" in image_filename_to_delete:
+                        image_filename_to_delete = None
+            except:
+                pass
     if image_filename_to_delete:
-         image_path_in_app_folder = os.path.join(script_dir, image_filename_to_delete)
+        image_path_in_app_folder = os.path.join(script_dir, image_filename_to_delete)
 
-    if folder_name in buttons_data and "pid" in buttons_data[folder_name]:
-        pid = buttons_data[folder_name]["pid"]
-        terminate_process_by_pid(pid)
-        del buttons_data[folder_name]["pid"]
-
-    # Unregister blueprint and clean up sys.modules
+    # Step 3: Deregister blueprint/module
     if folder_name in app.blueprints:
         app.blueprints.pop(folder_name, None)
     mod_name = f"{folder_name}_app"
     if mod_name in sys.modules:
         del sys.modules[mod_name]
 
-    # Increase wait time to allow resources (like file handles) to be released
-    print(f"Waiting for resources to release for '{folder_name}'...")
-    time.sleep(2) # Increased from 0.5 seconds to 2 seconds
-
-    # Create backup before deletion
+    # Step 4: Backup
     create_backup(folder_name)
+    time.sleep(2)
 
+    # Step 5: Delete folder
+    deleted = False
     try:
-        # Attempt to delete the script directory using shutil.rmtree first
         if os.path.exists(script_dir):
-            print(f"Attempting to delete script directory with shutil.rmtree: {script_dir}")
             shutil.rmtree(script_dir)
-            print(f"✅ Successfully deleted script directory with shutil.rmtree: {script_dir}")
-
-        # If shutil.rmtree succeeds, the image file is also deleted, so no need for separate deletion.
-        # Proceed to update buttons.json
-        if folder_name in buttons_data:
-            del buttons_data[folder_name]
-        save_buttons(buttons_data)
-
-        return jsonify({"status": "success", "message": f"Deleted '{folder_name}'"})
-
+            deleted = True
+            print(f"✅ Deleted with shutil: {script_dir}")
     except PermissionError as e:
-        # If shutil.rmtree fails due to PermissionError (file in use), try forceful deletion via rmdir command
-        print(f"❌ Permission Error during shutil.rmtree deletion of '{folder_name}': {e}")
-        print(f"Attempting forceful deletion using rmdir /S /Q: {script_dir}")
+        print(f"⚠️ shutil failed: {e}")
         try:
-            # Use rmdir /S /Q for forceful deletion on Windows
-            # /S: Deletes a directory tree (the specified directory and all its subdirectories and files).
-            # /Q: Specifies quiet mode. Does not ask for confirmation when deleting a directory tree.
-            result = subprocess.run(
-                ["rmdir", "/S", "/Q", script_dir], # Command and arguments as a list
-                check=False, # Do not raise CalledProcessError immediately, check stderr for specific message
-                capture_output=True, # Capture stdout and stderr
-                text=True, # Decode output as text
-                shell=True # Use shell=True for rmdir command (necessary for rmdir on some systems)
-            )
-            print(f"✅ Forceful deletion command attempted for '{folder_name}'. Return Code: {result.returncode}")
-            print("--- rmdir Output Start ---")
-            print(result.stdout)
-            print(result.stderr)
-            print("--- rmdir Output End ---")
-
-            # Check if the error indicates a file is still in use (WinError 32)
-            # This message might be in stderr even with a 0 or non-zero return code depending on exact scenario
-            if "The process cannot access the file because it is being used by another process" in result.stderr or result.returncode != 0:
-                 print(f"❌ Forceful deletion failed or encountered errors for '{folder_name}'. Stderr indicates a problem.")
-                 # Provide a simplified error message instructing the user to restart
-                 return jsonify({"status": "error", "message": f"Could not delete app directory '{folder_name}': A file is in use. Please restart the Flask Bot Manager application to release file locks and try again."}), 500
-
-
-            # If rmdir command executed without the specific file-in-use error and returned 0, assume success
+            subprocess.run(["rmdir", "/S", "/Q", script_dir], shell=True, check=True)
             if not os.path.exists(script_dir):
-                 print(f"✅ Confirmed directory '{script_dir}' is deleted after forceful attempt.")
-
-                 # Forceful deletion worked, now update buttons.json
-                 if folder_name in buttons_data:
-                    del buttons_data[folder_name]
-                 save_buttons(buttons_data)
-                 return jsonify({"status": "success", "message": f"Deleted '{folder_name}'. (Note: Forceful deletion was required.)"})
-            else:
-                 # If directory still exists despite successful rmdir execution (unlikely but possible)
-                 print(f"⚠️ rmdir /S /Q command executed successfully but directory '{script_dir}' still exists.")
-                 return jsonify({"status": "error", "message": f"Failed to delete app directory '{folder_name}' even with forceful attempt. Directory still exists."}), 500
-
-        except FileNotFoundError:
-             print(f"❌ Error: rmdir command not found.") # Should not happen on Windows
-             return jsonify({"status": "error", "message": f"Could not execute deletion command for '{folder_name}'. rmdir command not found."}), 500
+                deleted = True
+                print(f"✅ Deleted with rmdir fallback: {script_dir}")
         except Exception as e:
-             # Catch any other unexpected exceptions during the forceful deletion attempt
-             print(f"❌ An unexpected error occurred during forceful deletion of '{folder_name}': {e}")
-             return jsonify({"status": "error", "message": f"An unexpected error occurred during forceful deletion: {str(e)}. Please restart the Flask Bot Manager application and try again."}), 500
+            print(f"❌ Force deletion failed: {e}")
 
-    except Exception as e:
-        # Catch any other exceptions during the initial shutil.rmtree attempt
-        print(f"❌ An unexpected error occurred during deletion of '{folder_name}': {e}")
-        return jsonify({"status": "error", "message": f"An unexpected error occurred during deletion: {str(e)}"}), 500
+    # Step 6: Delete image if applicable
+    if image_path_in_app_folder and os.path.exists(image_path_in_app_folder):
+        try:
+            os.remove(image_path_in_app_folder)
+            print(f"🧹 Deleted image: {image_path_in_app_folder}")
+        except Exception as e:
+            print(f"⚠️ Image delete error: {e}")
 
-    if folder_name in buttons_data and "pid" in buttons_data[folder_name]:
-        pid = buttons_data[folder_name]["pid"]
-        terminate_process_by_pid(pid)
-        del buttons_data[folder_name]["pid"]
-
-    # Unregister blueprint and clean up sys.modules
-    if folder_name in app.blueprints:
-        app.blueprints.pop(folder_name, None)
-    mod_name = f"{folder_name}_app"
-    if mod_name in sys.modules:
-        del sys.modules[mod_name]
-
-    time.sleep(0.5)
-
-    # Create backup before deletion
-    create_backup(folder_name)
-
-    try:
-        if os.path.exists(script_dir):
-            shutil.rmtree(script_dir)
-        if os.path.exists(image_path):
-            os.remove(image_path)
-        if folder_name in buttons_data:
-            del buttons_data[folder_name]
+    # Step 7: Clean buttons.json
+    if folder_name in buttons_data:
+        del buttons_data[folder_name]
         save_buttons(buttons_data)
 
-        return jsonify({"status": "success", "message": f"Deleted '{folder_name}'"})
+    # Step 8: Restart app.py
+    try:
+        importlib.invalidate_caches()
+        venv_python = os.path.join(BASE_DIR, "venv", "Scripts", "python.exe")
+        main_app_path = os.path.join(BASE_DIR, "app.py")
+        print(f"♻️ Restarting main app: {venv_python} {main_app_path}")
+        subprocess.Popen([venv_python, main_app_path], cwd=BASE_DIR, creationflags=subprocess.CREATE_NEW_CONSOLE)
+        os._exit(0)
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        print(f"❌ Restart failed: {e}")
+        return jsonify({"status": "warning", "message": f"App deleted but restart failed: {e}"}), 202
+
+    return jsonify({"status": "success", "message": f"Deleted '{folder_name}'"})
 
 @manager_bp.route("/edit/<folder_name>", methods=["POST"])
 def edit_script(folder_name):
@@ -792,7 +724,44 @@ def register_all_apps():
 
     app.wsgi_app = DispatcherMiddleware(app.wsgi_app, mapping)
 
+
+def clean_orphan_folders():
+    """Remove folders in BASE_PATH not listed in buttons.json."""
+    print("🔍 Checking for orphan folders after restart...")
+    registered_folders = set(load_buttons().keys())
+
+    for folder in os.listdir(BASE_PATH):
+        folder_path = os.path.join(BASE_PATH, folder)
+        if (
+            os.path.isdir(folder_path)
+            and folder not in registered_folders
+            and not folder.startswith("venv")
+            and folder != "__pycache__"
+        ):
+            print(f"🧹 Orphan folder found: {folder}. Attempting delete...")
+
+            try:
+                # Try to kill any process locking files inside this folder
+                for proc in psutil.process_iter(['pid', 'open_files']):
+                    try:
+                        files = proc.info.get('open_files') or []
+                        for f in files:
+                            if f.path.startswith(folder_path):
+                                print(f"🔪 Killing PID {proc.pid} locking {f.path}")
+                                proc.kill()
+                                proc.wait()
+                    except (psutil.NoSuchProcess, psutil.AccessDenied):
+                        continue
+
+                shutil.rmtree(folder_path)
+                print(f"✅ Deleted orphan folder: {folder_path}")
+            except Exception as e:
+                print(f"❌ Could not delete orphan folder {folder}: {e}")
+
+
 if __name__ == "__main__":
     app.register_blueprint(manager_bp, url_prefix="/")
     register_all_apps()
+    clean_orphan_folders()  # ✅ Run after registration
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+
