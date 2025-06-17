@@ -5,6 +5,5 @@ html5lib
 lxml
 flask-session
 psutil
-pywin32
 flask-sse
 eventlet
