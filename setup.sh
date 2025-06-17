@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# Create venv if not exists
+# Create virtual environment if not exists
 if [ ! -d "venv" ]; then
   echo "Creating virtual environment..."
   python3 -m venv venv
 fi
 
-# Activate venv
+# Activate the virtual environment
 echo "Activating virtual environment..."
 source venv/bin/activate
 
-# Install dependencies
+# Install required packages
 echo "Installing requirements..."
 pip install -r requirements.txt
 
@@ -18,3 +18,5 @@ pip install -r requirements.txt
 echo "Upgrading pip..."
 pip install --upgrade pip
 
+# Auto-exit
+exit 0
