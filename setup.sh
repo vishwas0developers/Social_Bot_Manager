@@ -18,4 +18,3 @@ pip install -r requirements.txt
 echo "Upgrading pip..."
 pip install --upgrade pip
 
-read -p "Press any key to continue..."
