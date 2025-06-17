@@ -1,10 +1,20 @@
 #!/bin/bash
 
-# Install required packages from requirements.txt
-echo "Installing required packages..."
+# Create venv if not exists
+if [ ! -d "venv" ]; then
+  echo "Creating virtual environment..."
+  python3 -m venv venv
+fi
+
+# Activate venv
+echo "Activating virtual environment..."
+source venv/bin/activate
+
+# Install dependencies
+echo "Installing requirements..."
 pip install -r requirements.txt
 
-# Upgrade pip to the latest version
+# Upgrade pip
 echo "Upgrading pip..."
 pip install --upgrade pip
 
