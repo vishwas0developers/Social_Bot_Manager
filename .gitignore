@@ -71,3 +71,33 @@ creds.json
 *.json
 .env
 clean_git_secrets.bat
+
+
+# Private credential files (ordinary source and databases remain eligible)
+.env
+.env.*
+!.env.example
+!.env.*.example
+.ocr_key
+.fernet_key
+.encryption_key
+id_rsa
+id_ed25519
+*.p12
+*.pfx
+*.ppk
+service-account*.json
+*_credentials.json
+credentials.json
+cookies.json
+cookies_*.json
+
+# SQLite databases stay local; never publish database files or journals.
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+*.sqlite-*
+*.sqlite3-*
+*.db-*
+*.db3-*
