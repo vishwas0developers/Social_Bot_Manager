@@ -101,3 +101,193 @@ cookies_*.json
 *.db3-*
 !.env.example
 !.env.*.example
+setup_github_repo.bat 
+
+# Ignore the virtual environment directory at root
+/venv/
+**/venv/
+backup/
+flask_session/
+
+# Ignore everything inside the apps/ directory
+/apps/*
+
+# Python cache
+__pycache__/
+routes/__pycache__/
+services/__pycache__/
+static/__pycache__/
+tests/__pycache__/
+utils/__pycache__/
+__pycache__/app.cpython-312.pyc
+*.pyc
+
+# Environment variables
+.env
+
+# Flask specific
+instance/
+flask_session/
+
+# Logs
+*.log
+**/*.log
+gunicorn-*.log
+
+# Folders and files to ignore
+uploads/
+outputs/
+python_scripts_backup/
+python_scripts_backup/*
+
+# Optional: Ignore zip files inside apps/ (already covered by /apps/*)
+python_scripts/*
+python_scripts/*.zip
+python_scripts/*.rar
+python_scripts/*.png
+python_scripts/*.jpg
+
+# Python virtual environments
+venv/
+__pycache__/
+
+# VS Code
+.vscode/
+
+# Node & Playwright
+node_modules/
+**/node.exe
+
+# Cache or log files
+*.log
+*.zip
+*.exe
+*.pyc
+.DS_Store
+# Secrets
+*.json
+*.key
+*.pem
+.env
+creds.json
+creds.json
+*.json
+.env
+clean_git_secrets.bat
+setup_github_repo.bat 
+
+# Ignore the virtual environment directory at root
+/venv/
+**/venv/
+backup/
+flask_session/
+
+# Ignore everything inside the apps/ directory
+/apps/*
+
+# Python cache
+__pycache__/
+routes/__pycache__/
+services/__pycache__/
+static/__pycache__/
+tests/__pycache__/
+utils/__pycache__/
+__pycache__/app.cpython-312.pyc
+*.pyc
+
+# Environment variables
+.env
+
+# Flask specific
+instance/
+flask_session/
+
+# Logs
+*.log
+**/*.log
+gunicorn-*.log
+
+# Folders and files to ignore
+uploads/
+outputs/
+python_scripts_backup/
+python_scripts_backup/*
+
+# Optional: Ignore zip files inside apps/ (already covered by /apps/*)
+python_scripts/*
+python_scripts/*.zip
+python_scripts/*.rar
+python_scripts/*.png
+python_scripts/*.jpg
+
+# Python virtual environments
+venv/
+__pycache__/
+
+# VS Code
+.vscode/
+
+# Node & Playwright
+node_modules/
+**/node.exe
+
+# Cache or log files
+*.log
+*.zip
+*.exe
+*.pyc
+.DS_Store
+# Secrets
+*.json
+*.key
+*.pem
+.env
+creds.json
+creds.json
+*.json
+.env
+clean_git_secrets.bat
+
+# --- secrets (security rollout) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+**/credentials.json
+**/client_secret*.json
+**/service_account*.json
+**/creds.json
+
+
+# Private credential files (ordinary source and databases remain eligible)
+.env
+.env.*
+!.env.example
+!.env.*.example
+.ocr_key
+.fernet_key
+.encryption_key
+id_rsa
+id_ed25519
+*.p12
+*.pfx
+*.ppk
+service-account*.json
+*_credentials.json
+credentials.json
+cookies.json
+cookies_*.json
+
+# SQLite databases stay local; never publish database files or journals.
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+*.sqlite-*
+*.sqlite3-*
+*.db-*
+*.db3-*
